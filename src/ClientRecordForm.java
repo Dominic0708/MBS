@@ -55,28 +55,32 @@ public class ClientRecordForm {
     confirmButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        if (System.clientExists(nameField.getText()) != null) {
-          if (mode == 0) {
-            JOptionPane.showMessageDialog(null, "Client already exists!");
-            client = System.clientExists(nameField.getText());
-            refresh();
-            mode = 1;
+        if (validInfo()) {
+          if (System.clientExists(nameField.getText()) != null) {
+            if (mode == 0) {
+              JOptionPane.showMessageDialog(null, "Client already exists!");
+              client = System.clientExists(nameField.getText());
+              refresh();
+              mode = 1;
+            } else {
+              client = new Client(nameField.getText(), new Date(dobField.getText()),
+                  addressField.getText(),
+                  emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
+                  Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
+              JOptionPane.showMessageDialog(null, "Client info has been updated!");
+            }
           } else {
-            client = new Client(nameField.getText(), new Date(dobField.getText()),
+            Client c = new Client(nameField.getText(), new Date(dobField.getText()),
                 addressField.getText(),
                 emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
                 Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
-            JOptionPane.showMessageDialog(null, "Client info has been updated!");
+            System.addClient(c);
+            client = c;
+            refresh();
+            JOptionPane.showMessageDialog(null, "Client has been created!");
           }
         } else {
-          Client c = new Client(nameField.getText(), new Date(dobField.getText()),
-              addressField.getText(),
-              emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-              Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
-          System.addClient(c);
-          client = c;
-          refresh();
-          JOptionPane.showMessageDialog(null, "Client has been created!");
+          JOptionPane.showMessageDialog(null, "Invalid info entered!");
         }
       }
     });
@@ -111,5 +115,16 @@ public class ClientRecordForm {
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
       this.membershipCountLabel.setText(String.valueOf(client.getMembershipCount()));
     }
+  }
+
+  private boolean validInfo() {
+    try {
+      int age = Integer.parseInt(ageField.getText());
+      int height = Integer.parseInt(heightField.getText());
+      int weight = Integer.parseInt(weightField.getText());
+    } catch (Exception e) {
+      return false;
+    }
+    return true;
   }
 }
