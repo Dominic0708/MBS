@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.form" afterPath="$PROJECT_DIR$/src/ClientRecordForm.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.java" afterPath="$PROJECT_DIR$/src/ClientRecordForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,18 +19,28 @@
       <file leaf-file-name="ClientRecordForm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="82" column="54" lean-forward="false" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="54" />
+            <state relative-caret-position="193">
+              <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
               <folding>
-                <element signature="e#3132#3133#0" expanded="true" />
-                <element signature="e#3165#3166#0" expanded="true" />
-                <element signature="e#3202#3203#0" expanded="true" />
-                <element signature="e#3224#3225#0" expanded="true" />
-                <element signature="e#3277#3278#0" expanded="true" />
-                <element signature="e#3317#3318#0" expanded="true" />
-                <element signature="e#3354#3355#0" expanded="true" />
-                <element signature="e#3374#3375#0" expanded="true" />
+                <element signature="e#3232#3233#0" expanded="true" />
+                <element signature="e#3265#3266#0" expanded="true" />
+                <element signature="e#3302#3303#0" expanded="true" />
+                <element signature="e#3324#3325#0" expanded="true" />
+                <element signature="e#3377#3378#0" expanded="true" />
+                <element signature="e#3417#3418#0" expanded="true" />
+                <element signature="e#3454#3455#0" expanded="true" />
+                <element signature="e#3474#3475#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountManagementForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="70" selection-end-column="89" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,7 +68,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ClientManagementForm.form" />
-        <option value="$PROJECT_DIR$/src/ClientRecordForm.form" />
         <option value="$PROJECT_DIR$/src/SystemForm.java" />
         <option value="$PROJECT_DIR$/src/ClientManagementForm.java" />
         <option value="$PROJECT_DIR$/src/AccountManagementForm.form" />
@@ -67,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/System.java" />
         <option value="$PROJECT_DIR$/src/AccountManagementForm.java" />
+        <option value="$PROJECT_DIR$/src/ClientRecordForm.form" />
         <option value="$PROJECT_DIR$/src/ClientRecordForm.java" />
       </list>
     </option>
@@ -118,6 +128,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SystemForm" />
+              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -190,6 +204,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="AccountManagementForm" />
               <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MBS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -384,7 +412,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -450,8 +478,8 @@
         <state relative-caret-position="375">
           <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -490,8 +518,8 @@
         <state relative-caret-position="135">
           <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding>
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,14 +565,14 @@
         <state relative-caret-position="174">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
-            <element signature="e#3132#3133#0" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3202#3203#0" expanded="true" />
-            <element signature="e#3224#3225#0" expanded="true" />
-            <element signature="e#3277#3278#0" expanded="true" />
-            <element signature="e#3317#3318#0" expanded="true" />
-            <element signature="e#3354#3355#0" expanded="true" />
-            <element signature="e#3374#3375#0" expanded="true" />
+            <element signature="e#3232#3233#0" expanded="true" />
+            <element signature="e#3265#3266#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3324#3325#0" expanded="true" />
+            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#3417#3418#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,8 +615,8 @@
         <state relative-caret-position="375">
           <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -619,16 +647,16 @@
         <state relative-caret-position="135">
           <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding>
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="false" />
+            <element signature="e#1129#1130#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="77" column="9" lean-forward="false" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
+        <state relative-caret-position="256">
+          <caret line="67" column="12" lean-forward="false" selection-start-line="67" selection-start-column="12" selection-end-line="70" selection-end-column="89" />
           <folding />
         </state>
       </provider>
@@ -640,17 +668,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="82" column="54" lean-forward="false" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="54" />
+        <state relative-caret-position="193">
+          <caret line="68" column="20" lean-forward="false" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
           <folding>
-            <element signature="e#3132#3133#0" expanded="true" />
-            <element signature="e#3165#3166#0" expanded="true" />
-            <element signature="e#3202#3203#0" expanded="true" />
-            <element signature="e#3224#3225#0" expanded="true" />
-            <element signature="e#3277#3278#0" expanded="true" />
-            <element signature="e#3317#3318#0" expanded="true" />
-            <element signature="e#3354#3355#0" expanded="true" />
-            <element signature="e#3374#3375#0" expanded="true" />
+            <element signature="e#3232#3233#0" expanded="true" />
+            <element signature="e#3265#3266#0" expanded="true" />
+            <element signature="e#3302#3303#0" expanded="true" />
+            <element signature="e#3324#3325#0" expanded="true" />
+            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#3417#3418#0" expanded="true" />
+            <element signature="e#3454#3455#0" expanded="true" />
+            <element signature="e#3474#3475#0" expanded="true" />
           </folding>
         </state>
       </provider>

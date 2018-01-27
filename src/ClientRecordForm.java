@@ -3,7 +3,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
 
@@ -29,7 +31,6 @@ public class ClientRecordForm {
   private JLabel dobLabel;
   private JLabel addressLabel;
   private JLabel emailLabel;
-  private JLabel membershipLabel;
   private JLabel phoneLabel;
   private JLabel ageLabel;
   private JLabel heightLabel;
@@ -37,6 +38,9 @@ public class ClientRecordForm {
   private JLabel weightLabel;
   private JLabel membershipCountLabel;
   private JLabel sessionCountLabel;
+  private JPanel notePanel;
+  private JList notes;
+  private JSpinner spinner;
   private static JFrame frame;
   private Client client;
   public int mode;
@@ -113,7 +117,6 @@ public class ClientRecordForm {
       this.heightField.setText(String.valueOf(client.getHeight()));
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
-      this.membershipCountLabel.setText(String.valueOf(client.getMembershipCount()));
     }
   }
 
