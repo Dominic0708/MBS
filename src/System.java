@@ -7,6 +7,7 @@ public class System {
 
   public static ArrayList<Account> accounts = new ArrayList<>();
   public static ArrayList<Client> clients = new ArrayList<>();
+  public static String masterPassword = "imabeast";
 
   public static boolean successfulLogin(String username, String password) {
     for (Account a : accounts) {

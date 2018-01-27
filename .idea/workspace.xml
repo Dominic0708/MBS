@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Config copy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Config copy 2" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$1.class" afterPath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$2.class" afterPath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$3.class" afterPath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm.class" afterPath="$PROJECT_DIR$/out/production/MBS/AccountManagementForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/System.class" afterPath="$PROJECT_DIR$/out/production/MBS/System.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config" afterPath="$PROJECT_DIR$/Config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Account.java" afterPath="$PROJECT_DIR$/src/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AccountManagementTool.java" afterPath="$PROJECT_DIR$/src/AccountManagementTool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientManagementForm.form" afterPath="$PROJECT_DIR$/src/ClientManagementForm.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientManagementForm.java" afterPath="$PROJECT_DIR$/src/ClientManagementForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.form" afterPath="$PROJECT_DIR$/src/ClientRecordForm.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoginForm.java" afterPath="$PROJECT_DIR$/src/LoginForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AccountManagementForm.java" afterPath="$PROJECT_DIR$/src/AccountManagementForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/System.java" afterPath="$PROJECT_DIR$/src/System.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SystemForm.java" afterPath="$PROJECT_DIR$/src/SystemForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,12 +23,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="LoginForm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LoginForm.java">
+      <file leaf-file-name="AccountManagementForm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="60" column="77" lean-forward="false" selection-start-line="60" selection-start-column="77" selection-end-line="60" selection-end-column="77" />
+            <state relative-caret-position="344">
+              <caret line="77" column="9" lean-forward="false" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/System.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+              <folding>
+                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="e#1129#1130#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,10 +67,10 @@
         <option value="$PROJECT_DIR$/src/ClientManagementForm.java" />
         <option value="$PROJECT_DIR$/src/AccountManagementForm.form" />
         <option value="$PROJECT_DIR$/src/Account.java" />
-        <option value="$PROJECT_DIR$/src/System.java" />
         <option value="$PROJECT_DIR$/src/AccountManagementTool.java" />
-        <option value="$PROJECT_DIR$/src/AccountManagementForm.java" />
         <option value="$PROJECT_DIR$/src/LoginForm.java" />
+        <option value="$PROJECT_DIR$/src/System.java" />
+        <option value="$PROJECT_DIR$/src/AccountManagementForm.java" />
       </list>
     </option>
   </component>
@@ -376,7 +387,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -461,17 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="47" column="3" lean-forward="false" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
-          <folding>
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AccountManagementTool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -485,23 +485,29 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
+    <entry file="file://$PROJECT_DIR$/src/LoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="64" column="9" lean-forward="false" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
+        <state relative-caret-position="431">
+          <caret line="71" column="57" lean-forward="false" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding>
-            <element signature="e#2490#2491#0" expanded="true" />
-            <element signature="e#2524#2525#0" expanded="true" />
-            <element signature="e#2636#2637#0" expanded="true" />
-            <element signature="e#2681#2682#0" expanded="true" />
+            <element signature="e#1097#1098#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginForm.java">
+    <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="60" column="77" lean-forward="false" selection-start-line="60" selection-start-column="77" selection-end-line="60" selection-end-column="77" />
+        <state relative-caret-position="344">
+          <caret line="77" column="9" lean-forward="false" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
           <folding />
         </state>
       </provider>
