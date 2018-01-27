@@ -17,6 +17,19 @@ public class System {
     return false;
   }
 
+  public static Account accountExists(String username) {
+    for (Account a : accounts) {
+      if ((a.getUsername()).equals(username)) {
+        return a;
+      }
+    }
+    return null;
+  }
+
+  public static void addAccount(Account a) {
+    System.accounts.add(a);
+  }
+
   public static Client clientExists(String name) {
     for (Client c : clients) {
       if ((c.getName()).equals(name)) {
@@ -28,5 +41,9 @@ public class System {
 
   public static void addClient(Client c) {
     System.clients.add(c);
+  }
+
+  public static ArrayList<Account> getAccounts() {
+    return System.accounts;
   }
 }

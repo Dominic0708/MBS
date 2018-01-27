@@ -31,7 +31,7 @@ public class SystemForm {
       @Override
       public void actionPerformed(ActionEvent e) {
         ClientManagementForm form = new ClientManagementForm();
-        ClientManagementForm.setFrame(new JFrame("MBS"));
+        ClientManagementForm.setFrame(new JFrame("MBS Client Management"));
         ClientManagementForm.getFrame().setContentPane(form.getPanel());
         ClientManagementForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ClientManagementForm.getFrame().setSize(800, 600);

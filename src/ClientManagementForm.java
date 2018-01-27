@@ -33,7 +33,7 @@ public class ClientManagementForm {
       public void actionPerformed(ActionEvent e) {
         ClientRecordForm form = new ClientRecordForm();
         form.mode = 0;
-        ClientRecordForm.setFrame(new JFrame("MBS"));
+        ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
         ClientRecordForm.getFrame().setContentPane(form.getPanel());
         ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         ClientRecordForm.getFrame().setSize(800, 600);
@@ -62,7 +62,7 @@ public class ClientManagementForm {
             form.mode = 1;
             form.setClient(System.clientExists(name));
             form.refresh();
-            ClientRecordForm.setFrame(new JFrame("MBS"));
+            ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
             ClientRecordForm.getFrame().setContentPane(form.getPanel());
             ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             ClientRecordForm.getFrame().setSize(800, 600);

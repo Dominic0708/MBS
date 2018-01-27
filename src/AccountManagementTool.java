@@ -8,10 +8,14 @@ public class AccountManagementTool {
   }
 
   public static void deleteAccount(String username) {
+    Account account = null;
     for (Account a : System.accounts) {
       if (a.getUsername().equals(username)) {
-        System.accounts.remove(a);
+        account = a;
       }
+    }
+    if (account != null) {
+      System.accounts.remove(account);
     }
   }
 }

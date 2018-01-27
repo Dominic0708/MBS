@@ -50,20 +50,28 @@ public class LoginForm {
         if (System
             .successfulLogin(usernameField.getText(), new String(passwordField.getPassword()))) {
           SystemForm form = new SystemForm();
-          SystemForm.setFrame(new JFrame("MBS"));
+          SystemForm.setFrame(new JFrame("MBS System"));
           SystemForm.getFrame().setContentPane(form.getPanel());
           SystemForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
           SystemForm.getFrame().setSize(400, 200);
           SystemForm.getFrame().setLocationRelativeTo(null);
           SystemForm.getFrame().setVisible(true);
           frame.dispose();
+        } else {
+          JOptionPane.showMessageDialog(null, "Wrong username or password!");
         }
       }
     });
     accountManagementButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-
+        AccountManagementForm form = new AccountManagementForm();
+        AccountManagementForm.setFrame(new JFrame("MBS Account Management"));
+        AccountManagementForm.getFrame().setContentPane(form.getPanel());
+        AccountManagementForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        AccountManagementForm.getFrame().setSize(300, 200);
+        AccountManagementForm.getFrame().setLocationRelativeTo(null);
+        AccountManagementForm.getFrame().setVisible(true);
       }
     });
   }
@@ -77,8 +85,8 @@ public class LoginForm {
     frame.setSize(300, 200);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
-    AccountManagementTool.addAccount("Dominic", "19960708");
-    AccountManagementTool.addAccount("Itay", "imabeast");
+    //AccountManagementTool.addAccount("Dominic", "19960708");
+    //AccountManagementTool.addAccount("Itay", "imabeast");
     loadConfiguration();
   }
 
