@@ -59,21 +59,26 @@ public class ClientRecordForm {
     confirmButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        if (validInfo()) {
-          if (System.clientExists(nameField.getText()) != null) {
-            if (mode == 0) {
-              JOptionPane.showMessageDialog(null, "Client already exists!");
-              client = System.clientExists(nameField.getText());
-              refresh();
-              mode = 1;
-            } else {
-              client = new Client(nameField.getText(), new Date(dobField.getText()),
-                  addressField.getText(),
-                  emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-                  Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
-              JOptionPane.showMessageDialog(null, "Client info has been updated!");
-            }
+
+        if (System.clientExists(nameField.getText()) != null) {
+          if (mode == 0) {
+            JOptionPane.showMessageDialog(null, "Client already exists!");
+            client = System.clientExists(nameField.getText());
+            refresh();
+            mode = 1;
           } else {
+            client = new Client(nameField.getText(), new Date(dobField.getText()),
+                addressField.getText(),
+                emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
+                Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
+            JOptionPane.showMessageDialog(null, "Client info has been updated!");
+            ClientManagementForm form = new ClientManagementForm();
+            ClientManagementForm.getFrame().setContentPane(form.getPanel());
+            ClientManagementForm.getFrame().setVisible(true);
+            frame.dispose();
+          }
+        } else {
+          if (validInfo()) {
             Client c = new Client(nameField.getText(), new Date(dobField.getText()),
                 addressField.getText(),
                 emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
@@ -82,9 +87,13 @@ public class ClientRecordForm {
             client = c;
             refresh();
             JOptionPane.showMessageDialog(null, "Client has been created!");
+            ClientManagementForm form = new ClientManagementForm();
+            ClientManagementForm.getFrame().setContentPane(form.getPanel());
+            ClientManagementForm.getFrame().setVisible(true);
+            frame.dispose();
+          } else {
+            JOptionPane.showMessageDialog(null, "Invalid info entered!");
           }
-        } else {
-          JOptionPane.showMessageDialog(null, "Invalid info entered!");
         }
       }
     });
