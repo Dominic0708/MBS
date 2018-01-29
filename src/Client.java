@@ -1,9 +1,10 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Dominic on 2018-01-08.
  */
-public class Client implements Serializable{
+public class Client implements Serializable {
 
   private String name;
   private Date dob;
@@ -14,9 +15,11 @@ public class Client implements Serializable{
   private int height;
   private int weight;
   private int sessionCount;
-  private int membershipCount;
+  private ArrayList<String> notes = new ArrayList<>();
+  private ArrayList<String> records = new ArrayList<>();
 
-  public Client(String name, Date dob, String address, String email, String phone, int age, int height, int weight) {
+  public Client(String name, Date dob, String address, String email, String phone, int age,
+      int height, int weight, int sc) {
     this.name = name;
     this.dob = dob;
     this.address = address;
@@ -25,6 +28,7 @@ public class Client implements Serializable{
     this.age = age;
     this.height = height;
     this.weight = weight;
+    this.sessionCount = sc;
   }
 
   public Date getDob() {
@@ -57,10 +61,6 @@ public class Client implements Serializable{
 
   public int getSessionCount() {
     return sessionCount;
-  }
-
-  public int getMembershipCount() {
-    return membershipCount;
   }
 
   public String getName() {
@@ -99,12 +99,36 @@ public class Client implements Serializable{
     this.weight = weight;
   }
 
-  public void setSessionCount(int sessionCount) {
-    this.sessionCount = sessionCount;
+  public void setSessionCount(int sc) {
+    this.sessionCount = sc;
   }
 
-  public void setMembershipCount(int membershipCount) {
-    this.membershipCount = membershipCount;
+  public ArrayList<String> getNotes() {
+    return notes;
   }
 
+  public void addNote(String note) {
+    this.notes.add(note);
+  }
+
+  public ArrayList<String> getRecords() {
+    return records;
+  }
+
+  public void addRecord(String record) {
+    this.records.add(record);
+  }
+
+  public void setInfo(String name, Date dob, String address, String email, String phone, int age,
+      int height, int weight, int sc) {
+    this.name = name;
+    this.dob = dob;
+    this.address = address;
+    this.email = email;
+    this.phone = phone;
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+    this.sessionCount = sc;
+  }
 }

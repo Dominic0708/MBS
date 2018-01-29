@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,16 +37,20 @@ public class ClientRecordForm {
   private JLabel heightLabel;
   private JLabel sessionLabel;
   private JLabel weightLabel;
-  private JLabel membershipCountLabel;
   private JLabel sessionCountLabel;
   private JPanel notePanel;
   private JList notes;
   private JSpinner spinner;
+  private JList records;
   private static JFrame frame;
   private Client client;
   public int mode;
 
   public ClientRecordForm() {
+
+    notes.setVisibleRowCount(5);
+    records.setVisibleRowCount(5);
+
     refresh();
     backButton.addActionListener(new ActionListener() {
       @Override
@@ -67,32 +72,53 @@ public class ClientRecordForm {
             refresh();
             mode = 1;
           } else {
-            client = new Client(nameField.getText(), new Date(dobField.getText()),
-                addressField.getText(),
-                emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-                Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
-            JOptionPane.showMessageDialog(null, "Client info has been updated!");
-            ClientManagementForm form = new ClientManagementForm();
-            ClientManagementForm.getFrame().setContentPane(form.getPanel());
-            ClientManagementForm.getFrame().setVisible(true);
-            frame.dispose();
+            if (validInfo()) {
+              client = System.clientExists(nameField.getText());
+
+              int sc = (Integer) spinner.getValue() + client.getSessionCount();
+
+              client.setInfo(nameField.getText(), new Date(dobField.getText()),
+                  addressField.getText(),
+                  emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
+                  Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
+                  sc);
+
+              client.addRecord("Session change: " + spinner.getValue());
+
+              JOptionPane.showMessageDialog(null,
+                  "Client info has been updated!" + java.lang.System.getProperty("line.separator")
+                      + "Session change: " + spinner.getValue());
+
+              refresh();
+
+//            ClientManagementForm form = new ClientManagementForm();
+//            ClientManagementForm.getFrame().setContentPane(form.getPanel());
+//            ClientManagementForm.getFrame().setVisible(true);
+//            frame.dispose();
+            } else {
+              JOptionPane.showMessageDialog(null, "Invalid info entered!");
+              refresh();
+            }
           }
         } else {
           if (validInfo()) {
-            Client c = new Client(nameField.getText(), new Date(dobField.getText()),
+            client = new Client(nameField.getText(), new Date(dobField.getText()),
                 addressField.getText(),
                 emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-                Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()));
-            System.addClient(c);
-            client = c;
+                Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
+                (Integer) spinner.getValue());
+            System.addClient(client);
+            client.addRecord("Client has been created with " + spinner.getValue() + " sessions!");
+            JOptionPane.showMessageDialog(null,
+                "Client has been created with " + spinner.getValue() + " sessions!");
             refresh();
-            JOptionPane.showMessageDialog(null, "Client has been created!");
-            ClientManagementForm form = new ClientManagementForm();
-            ClientManagementForm.getFrame().setContentPane(form.getPanel());
-            ClientManagementForm.getFrame().setVisible(true);
-            frame.dispose();
+//            ClientManagementForm form = new ClientManagementForm();
+//            ClientManagementForm.getFrame().setContentPane(form.getPanel());
+//            ClientManagementForm.getFrame().setVisible(true);
+//            frame.dispose();
           } else {
             JOptionPane.showMessageDialog(null, "Invalid info entered!");
+            refresh();
           }
         }
       }
@@ -126,6 +152,18 @@ public class ClientRecordForm {
       this.heightField.setText(String.valueOf(client.getHeight()));
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
+
+      DefaultListModel<String> noteList = new DefaultListModel<>();
+      for (String note : client.getNotes()) {
+        noteList.addElement(note);
+      }
+      this.notes.setModel(noteList);
+
+      DefaultListModel<String> recordList = new DefaultListModel<>();
+      for (String record : client.getRecords()) {
+        recordList.addElement(record);
+      }
+      this.records.setModel(recordList);
     }
   }
 

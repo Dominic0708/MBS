@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$2.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client.java" afterPath="$PROJECT_DIR$/src/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.form" afterPath="$PROJECT_DIR$/src/ClientRecordForm.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.java" afterPath="$PROJECT_DIR$/src/ClientRecordForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,21 +18,29 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientRecordForm.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientRecordForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
-              <folding>
-                <marker date="1517168426000" expanded="false" signature="3682:3689" ph=" { " />
-                <marker date="1517168426000" expanded="false" signature="3713:3717" ph=" }" />
-                <marker date="1517168426000" expanded="false" signature="3752:3759" ph=" { " />
-                <marker date="1517168426000" expanded="false" signature="3772:3776" ph=" }" />
-                <marker date="1517168426000" expanded="false" signature="3827:3834" ph=" { " />
-                <marker date="1517168426000" expanded="false" signature="3865:3869" ph=" }" />
-                <marker date="1517168426000" expanded="false" signature="3904:3911" ph=" { " />
-                <marker date="1517168426000" expanded="false" signature="3922:3926" ph=" }" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientRecordForm.form" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
+          <provider selected="true" editor-type-id="ui-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientManagementForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,15 +69,16 @@
         <option value="$PROJECT_DIR$/src/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/System.java" />
         <option value="$PROJECT_DIR$/src/AccountManagementForm.java" />
-        <option value="$PROJECT_DIR$/src/ClientRecordForm.form" />
+        <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/src/ClientRecordForm.java" />
+        <option value="$PROJECT_DIR$/src/ClientRecordForm.form" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="928" />
+    <option name="height" value="924" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -86,6 +95,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -204,9 +214,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -389,15 +398,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="928" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1680" height="924" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -424,21 +432,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding>
-            <marker date="1517168089000" expanded="false" signature="2928:2935" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="2963:2967" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3002:3009" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3022:3026" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3077:3084" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3119:3123" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SystemForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -499,28 +492,9 @@
         <state relative-caret-position="873">
           <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1517040689000" expanded="true" signature="1208:1212" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1248:1255" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1272:1276" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1308:1315" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1330:1334" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1376:1383" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1406:1410" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1448:1455" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1474:1478" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1516:1523" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1542:1546" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1577:1584" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1599:1603" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1640:1647" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1668:1672" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1709:1716" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1737:1741" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1790:1797" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1830:1834" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1889:1896" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1935:1939" ph=" }" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+            <element signature="e#2170#2171#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -534,16 +508,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <marker date="1517168426000" expanded="false" signature="3682:3689" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3713:3717" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3752:3759" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3772:3776" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3827:3834" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3865:3869" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3904:3911" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3922:3926" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -622,16 +587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
-          <folding>
-            <marker date="1517168426000" expanded="false" signature="3682:3689" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3713:3717" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3752:3759" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3772:3776" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3827:3834" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3865:3869" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3904:3911" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3922:3926" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -639,14 +595,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
-          <folding>
-            <marker date="1517168089000" expanded="false" signature="2928:2935" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="2963:2967" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3002:3009" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3022:3026" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3077:3084" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3119:3123" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -655,13 +604,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Config" />
     <entry file="file://$PROJECT_DIR$/src/LoginForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -671,14 +614,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
           <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
-          <folding>
-            <marker date="1517168089000" expanded="false" signature="2928:2935" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="2963:2967" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3002:3009" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3022:3026" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3077:3084" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3119:3123" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -732,37 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1517040689000" expanded="true" signature="1208:1212" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1248:1255" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1272:1276" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1308:1315" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1330:1334" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1376:1383" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1406:1410" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1448:1455" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1474:1478" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1516:1523" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1542:1546" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1577:1584" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1599:1603" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1640:1647" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1668:1672" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1709:1716" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1737:1741" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1790:1797" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1830:1834" ph=" }" />
-            <marker date="1517040689000" expanded="false" signature="1889:1896" ph=" { " />
-            <marker date="1517040689000" expanded="false" signature="1935:1939" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -772,49 +677,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding>
-            <marker date="1517168426000" expanded="false" signature="3682:3689" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3713:3717" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3752:3759" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3772:3776" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3827:3834" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3865:3869" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3904:3911" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3922:3926" ph=" }" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Config" />
     <entry file="file://$PROJECT_DIR$/src/LoginForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="35" column="54" lean-forward="false" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
-          <folding>
-            <marker date="1517168089000" expanded="false" signature="2928:2935" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="2963:2967" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3002:3009" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3022:3026" ph=" }" />
-            <marker date="1517168089000" expanded="false" signature="3077:3084" ph=" { " />
-            <marker date="1517168089000" expanded="false" signature="3119:3123" ph=" }" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SystemForm.java">
@@ -839,23 +709,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/LoginForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="71" column="57" lean-forward="false" selection-start-line="71" selection-start-column="57" selection-end-line="71" selection-end-column="57" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -867,26 +725,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
+    <entry file="file://$PROJECT_DIR$/src/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
+    <entry file="file://$PROJECT_DIR$/src/SystemForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
-          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding>
-            <marker date="1517168426000" expanded="false" signature="3682:3689" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3713:3717" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3752:3759" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3772:3776" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3827:3834" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3865:3869" ph=" }" />
-            <marker date="1517168426000" expanded="false" signature="3904:3911" ph=" { " />
-            <marker date="1517168426000" expanded="false" signature="3922:3926" ph=" }" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2136#2137#0" expanded="false" />
+            <element signature="e#2170#2171#0" expanded="false" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="90" column="0" lean-forward="true" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="51" column="32" lean-forward="false" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
   </component>
