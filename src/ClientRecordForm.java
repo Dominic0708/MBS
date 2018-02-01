@@ -6,9 +6,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
+import java.util.Date;
 
 /**
  * Created by Dominic on 2018-01-13.
@@ -39,18 +42,16 @@ public class ClientRecordForm {
   private JLabel weightLabel;
   private JLabel sessionCountLabel;
   private JPanel notePanel;
-  private JList notes;
   private JSpinner spinner;
+  private JScrollPane noteScroll;
+  private JScrollPane recordScroll;
+  private JList notes;
   private JList records;
   private static JFrame frame;
   private Client client;
   public int mode;
 
   public ClientRecordForm() {
-
-    notes.setVisibleRowCount(5);
-    records.setVisibleRowCount(5);
-
     refresh();
     backButton.addActionListener(new ActionListener() {
       @Override
@@ -77,13 +78,15 @@ public class ClientRecordForm {
 
               int sc = (Integer) spinner.getValue() + client.getSessionCount();
 
-              client.setInfo(nameField.getText(), new Date(dobField.getText()),
+              client.setInfo(nameField.getText(), new CustomDate(dobField.getText()),
                   addressField.getText(),
                   emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
                   Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
                   sc);
 
-              client.addRecord("Session change: " + spinner.getValue());
+              client.addRecord(
+                  new Date() + "   -   Session change: " + spinner.getValue() + "   -   by "
+                      + System.currentAccount.getUsername());
 
               JOptionPane.showMessageDialog(null,
                   "Client info has been updated!" + java.lang.System.getProperty("line.separator")
@@ -102,13 +105,15 @@ public class ClientRecordForm {
           }
         } else {
           if (validInfo()) {
-            client = new Client(nameField.getText(), new Date(dobField.getText()),
+            client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
                 addressField.getText(),
                 emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
                 Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
                 (Integer) spinner.getValue());
             System.addClient(client);
-            client.addRecord("Client has been created with " + spinner.getValue() + " sessions!");
+            client.addRecord(
+                new Date() + "   -   Session change: " + spinner.getValue() + "   -   by "
+                    + System.currentAccount.getUsername());
             JOptionPane.showMessageDialog(null,
                 "Client has been created with " + spinner.getValue() + " sessions!");
             refresh();

@@ -8,10 +8,12 @@ public class System {
   public static ArrayList<Account> accounts = new ArrayList<>();
   public static ArrayList<Client> clients = new ArrayList<>();
   public static String masterPassword = "imabeast";
+  public static Account currentAccount;
 
   public static boolean successfulLogin(String username, String password) {
     for (Account a : accounts) {
       if (a.getUsername().equals(username) && a.getPassword().equals(password)) {
+        currentAccount = a;
         return true;
       }
     }

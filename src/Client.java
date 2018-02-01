@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Client implements Serializable {
 
   private String name;
-  private Date dob;
+  private CustomDate dob;
   private String address;
   private String email;
   private String phone;
@@ -18,7 +18,7 @@ public class Client implements Serializable {
   private ArrayList<String> notes = new ArrayList<>();
   private ArrayList<String> records = new ArrayList<>();
 
-  public Client(String name, Date dob, String address, String email, String phone, int age,
+  public Client(String name, CustomDate dob, String address, String email, String phone, int age,
       int height, int weight, int sc) {
     this.name = name;
     this.dob = dob;
@@ -31,7 +31,7 @@ public class Client implements Serializable {
     this.sessionCount = sc;
   }
 
-  public Date getDob() {
+  public CustomDate getDob() {
     return dob;
   }
 
@@ -71,7 +71,7 @@ public class Client implements Serializable {
     this.name = name;
   }
 
-  public void setDob(Date dob) {
+  public void setDob(CustomDate dob) {
     this.dob = dob;
   }
 
@@ -119,7 +119,7 @@ public class Client implements Serializable {
     this.records.add(record);
   }
 
-  public void setInfo(String name, Date dob, String address, String email, String phone, int age,
+  public void setInfo(String name, CustomDate dob, String address, String email, String phone, int age,
       int height, int weight, int sc) {
     this.name = name;
     this.dob = dob;

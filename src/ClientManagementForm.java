@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -19,14 +20,16 @@ import javax.swing.DefaultListModel;
 public class ClientManagementForm {
 
   private JPanel managementPanel;
-  private JPanel clientPanel;
+  private JPanel buttonPanel;
   private JButton addClientButton;
   private JButton recordChangeButton;
   private JButton backButton;
   private JList<String> clientList;
+  private JScrollPane clientScroll;
   private static JFrame frame;
 
   public ClientManagementForm() {
+    clientList.setVisibleRowCount(10);
     refresh();
     addClientButton.addActionListener(new ActionListener() {
       @Override

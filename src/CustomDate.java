@@ -3,13 +3,13 @@ import java.io.Serializable;
 /**
  * Created by Dominic on 2018-01-08.
  */
-public class Date implements Serializable {
+public class CustomDate implements Serializable {
 
   public int year;
   public int month;
   public int day;
 
-  public Date(String dob) {
+  public CustomDate(String dob) {
     int first = dob.indexOf("/");
     int second = dob.indexOf("/", first + 1);
     if (first == -1 || second == -1) {
