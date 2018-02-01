@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
@@ -29,7 +31,6 @@ public class ClientManagementForm {
   private static JFrame frame;
 
   public ClientManagementForm() {
-    clientList.setVisibleRowCount(10);
     refresh();
     addClientButton.addActionListener(new ActionListener() {
       @Override
@@ -68,7 +69,7 @@ public class ClientManagementForm {
             ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
             ClientRecordForm.getFrame().setContentPane(form.getPanel());
             ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            ClientRecordForm.getFrame().setSize(800, 600);
+            ClientRecordForm.getFrame().setSize(1000, 600);
             ClientRecordForm.getFrame().setLocationRelativeTo(null);
             ClientRecordForm.getFrame().setVisible(true);
             frame.dispose();

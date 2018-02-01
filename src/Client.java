@@ -119,7 +119,20 @@ public class Client implements Serializable {
     this.records.add(record);
   }
 
-  public void setInfo(String name, CustomDate dob, String address, String email, String phone, int age,
+  public void popNote() {
+    if (!notes.isEmpty()) {
+      this.notes.remove(notes.size() - 1);
+    }
+  }
+
+  public void popRecord() {
+    if (!records.isEmpty()) {
+      this.records.remove(records.size() - 1);
+    }
+  }
+
+  public void setInfo(String name, CustomDate dob, String address, String email, String phone,
+      int age,
       int height, int weight, int sc) {
     this.name = name;
     this.dob = dob;

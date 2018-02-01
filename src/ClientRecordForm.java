@@ -1,5 +1,9 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -50,6 +54,8 @@ public class ClientRecordForm {
   private static JFrame frame;
   private Client client;
   public int mode;
+  private int addClickCounter;
+  private int deleteClickCounter;
 
   public ClientRecordForm() {
     refresh();
@@ -91,7 +97,7 @@ public class ClientRecordForm {
               JOptionPane.showMessageDialog(null,
                   "Client info has been updated!" + java.lang.System.getProperty("line.separator")
                       + "Session change: " + spinner.getValue());
-
+              mode = 1;
               refresh();
 
 //            ClientManagementForm form = new ClientManagementForm();
@@ -112,11 +118,13 @@ public class ClientRecordForm {
                 (Integer) spinner.getValue());
             System.addClient(client);
             client.addRecord(
-                new Date() + "   -   Session change: " + spinner.getValue() + "   -   by "
+                new Date() + "   -   Client has been created with: " + spinner.getValue()
+                    + "   -   by "
                     + System.currentAccount.getUsername());
             JOptionPane.showMessageDialog(null,
                 "Client has been created with " + spinner.getValue() + " sessions!");
             refresh();
+            mode = 1;
 //            ClientManagementForm form = new ClientManagementForm();
 //            ClientManagementForm.getFrame().setContentPane(form.getPanel());
 //            ClientManagementForm.getFrame().setVisible(true);
@@ -125,6 +133,38 @@ public class ClientRecordForm {
             JOptionPane.showMessageDialog(null, "Invalid info entered!");
             refresh();
           }
+        }
+      }
+    });
+    notes.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        super.mouseClicked(e);
+        if (mode == 1 && addClickCounter == 1) {
+          String note = JOptionPane
+              .showInputDialog(null, "Please enter the note you want to add:", "MBS",
+                  JOptionPane.INFORMATION_MESSAGE);
+          if (note != null) {
+            client.addNote((new Date() + "   -   " + note + "   -   by "
+                + System.currentAccount.getUsername()));
+            refresh();
+            addClickCounter = 0;
+          }
+        } else if (mode == 1 && addClickCounter == 0) {
+          addClickCounter = 1;
+        }
+      }
+    });
+    records.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        super.mouseClicked(e);
+        if (mode == 1 && deleteClickCounter == 1) {
+          client.popNote();
+          refresh();
+          deleteClickCounter = 0;
+        } else if (mode == 1 && deleteClickCounter == 0) {
+          deleteClickCounter = 1;
         }
       }
     });
