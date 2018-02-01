@@ -15,6 +15,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.DefaultListModel;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Dominic on 2018-01-12.
@@ -95,7 +97,11 @@ public class ClientManagementForm {
 
   public void refresh() {
     DefaultListModel<String> list = new DefaultListModel<>();
-    for (Client c : System.clients) {
+
+    ArrayList<Client> tempClients = new ArrayList<>(System.clients);
+    Collections.reverse(tempClients);
+
+    for (Client c : tempClients) {
       list.addElement(c.getName());
     }
     this.clientList.setModel(list);

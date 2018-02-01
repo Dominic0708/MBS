@@ -16,6 +16,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
 import java.util.Date;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Dominic on 2018-01-13.
@@ -199,13 +201,21 @@ public class ClientRecordForm {
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
 
       DefaultListModel<String> noteList = new DefaultListModel<>();
-      for (String note : client.getNotes()) {
+
+      ArrayList<String> tempNote = new ArrayList<>(client.getNotes());
+      Collections.reverse(tempNote);
+
+      for (String note : tempNote) {
         noteList.addElement(note);
       }
       this.notes.setModel(noteList);
 
       DefaultListModel<String> recordList = new DefaultListModel<>();
-      for (String record : client.getRecords()) {
+
+      ArrayList<String> tempRecord = new ArrayList<>(client.getRecords());
+      Collections.reverse(tempRecord);
+
+      for (String record : tempRecord) {
         recordList.addElement(record);
       }
       this.records.setModel(recordList);
