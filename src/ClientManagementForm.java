@@ -17,6 +17,8 @@ import javax.swing.WindowConstants;
 import javax.swing.DefaultListModel;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  * Created by Dominic on 2018-01-12.
@@ -78,6 +80,25 @@ public class ClientManagementForm {
           } else {
             JOptionPane.showMessageDialog(null, "Client has not been found!");
           }
+        }
+      }
+    });
+    clientList.addListSelectionListener(new ListSelectionListener() {
+      @Override
+      public void valueChanged(ListSelectionEvent e) {
+        String selected = clientList.getSelectedValue();
+        if (System.clientExists(selected) != null) {
+          ClientRecordForm form = new ClientRecordForm();
+          form.mode = 1;
+          form.setClient(System.clientExists(selected));
+          form.refresh();
+          ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
+          ClientRecordForm.getFrame().setContentPane(form.getPanel());
+          ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+          ClientRecordForm.getFrame().setSize(1000, 600);
+          ClientRecordForm.getFrame().setLocationRelativeTo(null);
+          ClientRecordForm.getFrame().setVisible(true);
+          frame.dispose();
         }
       }
     });
