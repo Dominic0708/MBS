@@ -34,9 +34,11 @@ public class ClientManagementForm {
   private JScrollPane clientScroll;
   private JButton deleteClientButton;
   private static JFrame frame;
+  private int clickCounter;
 
   public ClientManagementForm() {
     refresh();
+    clickCounter = 0;
     addClientButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -87,8 +89,15 @@ public class ClientManagementForm {
     clientList.addListSelectionListener(new ListSelectionListener() {
       @Override
       public void valueChanged(ListSelectionEvent e) {
+        clickCounter = 0;
+      }
+    });
+    clientList.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        super.mouseClicked(e);
         String selected = clientList.getSelectedValue();
-        if (System.clientExists(selected) != null) {
+        if (System.clientExists(selected) != null && clickCounter == 1) {
           ClientRecordForm form = new ClientRecordForm();
           form.mode = 1;
           form.setClient(System.clientExists(selected));
@@ -99,7 +108,10 @@ public class ClientManagementForm {
           ClientRecordForm.getFrame().setSize(1000, 600);
           ClientRecordForm.getFrame().setLocationRelativeTo(null);
           ClientRecordForm.getFrame().setVisible(true);
+          clickCounter = 0;
           frame.dispose();
+        } else if (System.clientExists(selected) != null && clickCounter == 0) {
+          clickCounter = 1;
         }
       }
     });

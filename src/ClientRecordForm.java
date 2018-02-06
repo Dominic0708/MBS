@@ -60,6 +60,8 @@ public class ClientRecordForm {
   private int deleteClickCounter;
 
   public ClientRecordForm() {
+    addClickCounter = 0;
+    deleteClickCounter = 0;
     refresh();
     backButton.addActionListener(new ActionListener() {
       @Override
