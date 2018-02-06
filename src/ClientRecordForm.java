@@ -81,33 +81,38 @@ public class ClientRecordForm {
             refresh();
             mode = 1;
           } else {
-            if (validInfo()) {
-              client = System.clientExists(nameField.getText());
+            if (System.clientExists(nameField.getText()) == null) {
+              if (validInfo()) {
+                int sc = (Integer) spinner.getValue() + client.getSessionCount();
 
-              int sc = (Integer) spinner.getValue() + client.getSessionCount();
+                client.setInfo(nameField.getText(), new CustomDate(dobField.getText()),
+                    addressField.getText(),
+                    emailField.getText(), phoneField.getText(),
+                    Integer.parseInt(ageField.getText()),
+                    Integer.parseInt(heightField.getText()),
+                    Integer.parseInt(weightField.getText()),
+                    sc);
 
-              client.setInfo(nameField.getText(), new CustomDate(dobField.getText()),
-                  addressField.getText(),
-                  emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-                  Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
-                  sc);
+                client.addRecord(
+                    new Date() + "   -   Session change: " + spinner.getValue() + "   -   by "
+                        + System.currentAccount.getUsername());
 
-              client.addRecord(
-                  new Date() + "   -   Session change: " + spinner.getValue() + "   -   by "
-                      + System.currentAccount.getUsername());
-
-              JOptionPane.showMessageDialog(null,
-                  "Client info has been updated!" + java.lang.System.getProperty("line.separator")
-                      + "Session change: " + spinner.getValue());
-              mode = 1;
-              refresh();
+                JOptionPane.showMessageDialog(null,
+                    "Client info has been updated!" + java.lang.System.getProperty("line.separator")
+                        + "Session change: " + spinner.getValue());
+                mode = 1;
+                refresh();
 
 //            ClientManagementForm form = new ClientManagementForm();
 //            ClientManagementForm.getFrame().setContentPane(form.getPanel());
 //            ClientManagementForm.getFrame().setVisible(true);
 //            frame.dispose();
+              } else {
+                JOptionPane.showMessageDialog(null, "Invalid info entered!");
+                refresh();
+              }
             } else {
-              JOptionPane.showMessageDialog(null, "Invalid info entered!");
+              JOptionPane.showMessageDialog(null, "Client already exists!");
               refresh();
             }
           }

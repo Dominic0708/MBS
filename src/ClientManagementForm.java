@@ -32,6 +32,7 @@ public class ClientManagementForm {
   private JButton backButton;
   private JList<String> clientList;
   private JScrollPane clientScroll;
+  private JButton deleteClientButton;
   private static JFrame frame;
 
   public ClientManagementForm() {
