@@ -75,16 +75,11 @@ public class ClientRecordForm {
     confirmButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-
-        if (System.clientExists(nameField.getText()) != null) {
-          if (mode == 0) {
-            JOptionPane.showMessageDialog(null, "Client already exists!");
-            client = System.clientExists(nameField.getText());
-            refresh();
-            mode = 1;
-          } else {
-            if (System.clientExists(nameField.getText()) == null) {
-              if (validInfo()) {
+        if (client != null) {
+          if (mode == 1) {
+            if (validInfo()) {
+              if (System.clientExists(nameField.getText()) == null || nameField.getText()
+                  .equals(client.getName())) {
                 int sc = (Integer) spinner.getValue() + client.getSessionCount();
 
                 client.setInfo(nameField.getText(), new CustomDate(dobField.getText()),
@@ -104,43 +99,61 @@ public class ClientRecordForm {
                         + "Session change: " + spinner.getValue());
                 mode = 1;
                 refresh();
+              } else {
+                JOptionPane.showMessageDialog(null, "Client already exists!");
+                refresh();
+              }
 
 //            ClientManagementForm form = new ClientManagementForm();
 //            ClientManagementForm.getFrame().setContentPane(form.getPanel());
 //            ClientManagementForm.getFrame().setVisible(true);
 //            frame.dispose();
-              } else {
-                JOptionPane.showMessageDialog(null, "Invalid info entered!");
-                refresh();
-              }
             } else {
-              JOptionPane.showMessageDialog(null, "Client already exists!");
+              JOptionPane.showMessageDialog(null, "Invalid info entered!");
               refresh();
             }
           }
         } else {
-          if (validInfo()) {
-            client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
-                addressField.getText(),
-                emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
-                Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
-                (Integer) spinner.getValue());
-            System.addClient(client);
-            client.addRecord(
-                new Date() + "   -   Client has been created with: " + spinner.getValue()
-                    + "   -   by "
-                    + System.currentAccount.getUsername());
-            JOptionPane.showMessageDialog(null,
-                "Client has been created with " + spinner.getValue() + " sessions!");
+          if (System.clientExists(nameField.getText()) != null) {
+            JOptionPane.showMessageDialog(null, "Client already exists!");
+            client = System.clientExists(nameField.getText());
             refresh();
             mode = 1;
+          } else {
+            if (validInfo()) {
+              client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
+                  addressField.getText(),
+                  emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
+                  Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
+                  (Integer) spinner.getValue());
+              System.addClient(client);
+              client.addRecord(
+                  new Date() + "   -   Client has been created with: " + spinner.getValue()
+                      + "   -   by "
+                      + System.currentAccount.getUsername());
+              JOptionPane.showMessageDialog(null,
+                  "Client has been created with " + spinner.getValue() + " sessions!");
+              refresh();
+              mode = 1;
 //            ClientManagementForm form = new ClientManagementForm();
 //            ClientManagementForm.getFrame().setContentPane(form.getPanel());
 //            ClientManagementForm.getFrame().setVisible(true);
 //            frame.dispose();
-          } else {
-            JOptionPane.showMessageDialog(null, "Invalid info entered!");
-            refresh();
+            } else {
+              client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
+                  addressField.getText(),
+                  emailField.getText(), phoneField.getText(), 0, 0, 0,
+                  (Integer) spinner.getValue());
+              System.addClient(client);
+              client.addRecord(
+                  new Date() + "   -   Client has been created with: " + spinner.getValue()
+                      + "   -   by "
+                      + System.currentAccount.getUsername());
+              JOptionPane.showMessageDialog(null,
+                  "Client has been created with " + spinner.getValue() + " sessions!");
+              refresh();
+              mode = 1;
+            }
           }
         }
       }
