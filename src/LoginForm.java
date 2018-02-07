@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.lang.*;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
@@ -10,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import java.awt.Toolkit;
+import java.util.Date;
 
 /**
  * Created by Dominic on 2018-01-10.
@@ -38,6 +40,10 @@ public class LoginForm {
         config.saveConfiguration();
         try {
           CustomFileHandler.saveConfiguration("Config", config);
+          CustomFileHandler
+              .saveConfiguration(
+                  java.lang.System.getProperty("user.dir") + File.separator + "Config Backups"
+                      + File.separator + new Date(), config);
         } catch (Exception exp) {
           JOptionPane.showMessageDialog(null, "Failed to save configuration");
         }
@@ -85,8 +91,6 @@ public class LoginForm {
     frame.setSize(300, 200);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
-    //AccountManagementTool.addAccount("Dominic", "19960708");
-    //AccountManagementTool.addAccount("Itay", "imabeast");
     loadConfiguration();
   }
 
