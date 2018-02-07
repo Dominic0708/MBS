@@ -43,6 +43,8 @@ public class AccountManagementForm {
               AccountManagementTool.addAccount(usernameField.getText(), passwordField.getText());
               JOptionPane.showMessageDialog(null, "Account has been created!");
             }
+          } else if (masterPassword != null && !masterPassword.equals(System.masterPassword)) {
+            JOptionPane.showMessageDialog(null, "Master password incorrect!");
           }
         }
       }
@@ -71,6 +73,8 @@ public class AccountManagementForm {
             if (masterPassword != null && masterPassword.equals(System.masterPassword)) {
               AccountManagementTool.deleteAccount(username);
               JOptionPane.showMessageDialog(null, "Account " + username + " has been deleted!");
+            } else if (masterPassword != null && !masterPassword.equals(System.masterPassword)) {
+              JOptionPane.showMessageDialog(null, "Master password incorrect!");
             }
           } else {
             JOptionPane.showMessageDialog(null, "Account not found!");

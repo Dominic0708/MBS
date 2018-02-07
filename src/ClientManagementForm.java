@@ -3,16 +3,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.DefaultListModel;
 import java.util.ArrayList;
@@ -28,7 +23,7 @@ public class ClientManagementForm {
   private JPanel managementPanel;
   private JPanel buttonPanel;
   private JButton addClientButton;
-  private JButton recordChangeButton;
+  private JButton clientLookupButton;
   private JButton backButton;
   private JList<String> clientList;
   private JScrollPane clientScroll;
@@ -62,7 +57,7 @@ public class ClientManagementForm {
         frame.dispose();
       }
     });
-    recordChangeButton.addActionListener(new ActionListener() {
+    clientLookupButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         String name = JOptionPane.showInputDialog(null, "Please enter client's full name:", "MBS",
@@ -112,6 +107,29 @@ public class ClientManagementForm {
           frame.dispose();
         } else if (System.clientExists(selected) != null && clickCounter == 0) {
           clickCounter = 1;
+        }
+      }
+    });
+    deleteClientButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        String name = JOptionPane.showInputDialog(null, "Please enter client's full name:", "MBS",
+            JOptionPane.INFORMATION_MESSAGE);
+        if (name != null) {
+          if (System.clientExists(name) != null) {
+            String password = JOptionPane
+                .showInputDialog(null, "Please enter the master password to confirm deletion:",
+                    "MBS",
+                    JOptionPane.INFORMATION_MESSAGE);
+            if (password != null && password.equals(System.masterPassword)) {
+              System.deleteClient(name);
+              refresh();
+            } else {
+              JOptionPane.showMessageDialog(null, "Master password incorrect!");
+            }
+          } else {
+            JOptionPane.showMessageDialog(null, "Client has not been found!");
+          }
         }
       }
     });

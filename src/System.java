@@ -29,10 +29,6 @@ public class System {
     return null;
   }
 
-  public static void addAccount(Account a) {
-    System.accounts.add(a);
-  }
-
   public static Client clientExists(String name) {
     for (Client c : clients) {
       if ((c.getName()).equals(name)) {
@@ -44,6 +40,10 @@ public class System {
 
   public static void addClient(Client c) {
     System.clients.add(c);
+  }
+
+  public static void deleteClient(String name) {
+    System.clients.remove(clientExists(name));
   }
 
   public static ArrayList<Account> getAccounts() {
