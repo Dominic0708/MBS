@@ -131,6 +131,13 @@ public class ClientManagementForm {
             JOptionPane.showMessageDialog(null, "Client has not been found!");
           }
         }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
+        }
       }
     });
   }

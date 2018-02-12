@@ -47,6 +47,13 @@ public class AccountManagementForm {
             JOptionPane.showMessageDialog(null, "Master password incorrect!");
           }
         }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
+        }
       }
     });
     backButton.addActionListener(new ActionListener() {
@@ -79,6 +86,13 @@ public class AccountManagementForm {
           } else {
             JOptionPane.showMessageDialog(null, "Account not found!");
           }
+        }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
         }
       }
     });

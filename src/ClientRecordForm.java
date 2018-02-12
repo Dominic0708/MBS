@@ -156,6 +156,13 @@ public class ClientRecordForm {
             }
           }
         }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
+        }
       }
     });
     notes.addMouseListener(new MouseAdapter() {
@@ -175,6 +182,13 @@ public class ClientRecordForm {
         } else if (mode == 1 && addClickCounter == 0) {
           addClickCounter = 1;
         }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
+        }
       }
     });
     records.addMouseListener(new MouseAdapter() {
@@ -187,6 +201,13 @@ public class ClientRecordForm {
           deleteClickCounter = 0;
         } else if (mode == 1 && deleteClickCounter == 0) {
           deleteClickCounter = 1;
+        }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
         }
       }
     });
