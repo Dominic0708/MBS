@@ -157,11 +157,16 @@ public class ClientManagementForm {
   public void refresh() {
     DefaultListModel<String> list = new DefaultListModel<>();
 
-    ArrayList<Client> tempClients = new ArrayList<>(System.clients);
-    Collections.reverse(tempClients);
+    ArrayList<String> temp = new ArrayList<>();
 
-    for (Client c : tempClients) {
-      list.addElement(c.getName());
+    for (Client c : System.clients) {
+      temp.add(c.getName());
+    }
+
+    Collections.sort(temp);
+
+    for (String name : temp) {
+      list.addElement(name);
     }
     this.clientList.setModel(list);
   }
