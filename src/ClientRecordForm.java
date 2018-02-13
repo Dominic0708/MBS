@@ -51,17 +51,14 @@ public class ClientRecordForm {
   private JSpinner spinner;
   private JScrollPane noteScroll;
   private JScrollPane recordScroll;
-  private JList notes;
   private JList records;
+  private JTextArea notesArea;
+  private JLabel editorLabel;
   private static JFrame frame;
   private Client client;
   public int mode;
-  private int addClickCounter;
-  private int deleteClickCounter;
 
   public ClientRecordForm() {
-    addClickCounter = 0;
-    deleteClickCounter = 0;
     refresh();
     backButton.addActionListener(new ActionListener() {
       @Override
@@ -165,50 +162,12 @@ public class ClientRecordForm {
         }
       }
     });
-    notes.addMouseListener(new MouseAdapter() {
+    notesArea.addKeyListener(new KeyAdapter() {
       @Override
-      public void mouseClicked(MouseEvent e) {
-        super.mouseClicked(e);
-        if (mode == 1 && addClickCounter == 1) {
-          String note = JOptionPane
-              .showInputDialog(null, "Please enter the note you want to add:", "MBS",
-                  JOptionPane.INFORMATION_MESSAGE);
-          if (note != null) {
-            client.addNote((new Date() + "   -   " + note + "   -   by "
-                + System.currentAccount.getUsername()));
-            refresh();
-            addClickCounter = 0;
-          }
-        } else if (mode == 1 && addClickCounter == 0) {
-          addClickCounter = 1;
-        }
-        Configuration config = new Configuration();
-        config.saveConfiguration();
-        try {
-          CustomFileHandler.saveConfiguration("Config", config);
-        } catch (Exception exp) {
-          JOptionPane.showMessageDialog(null, "Failed to save configuration");
-        }
-      }
-    });
-    records.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        super.mouseClicked(e);
-        if (mode == 1 && deleteClickCounter == 1) {
-          client.popNote();
-          refresh();
-          deleteClickCounter = 0;
-        } else if (mode == 1 && deleteClickCounter == 0) {
-          deleteClickCounter = 1;
-        }
-        Configuration config = new Configuration();
-        config.saveConfiguration();
-        try {
-          CustomFileHandler.saveConfiguration("Config", config);
-        } catch (Exception exp) {
-          JOptionPane.showMessageDialog(null, "Failed to save configuration");
-        }
+      public void keyReleased(KeyEvent e) {
+        super.keyReleased(e);
+        client.popNote();
+        client.addNote(notesArea.getText());
       }
     });
   }
@@ -241,15 +200,10 @@ public class ClientRecordForm {
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
 
-      DefaultListModel<String> noteList = new DefaultListModel<>();
-
-      ArrayList<String> tempNote = new ArrayList<>(client.getNotes());
-      Collections.reverse(tempNote);
-
-      for (String note : tempNote) {
-        noteList.addElement(note);
+      try {notesArea.setText(client.getNotes().get(0));}
+      catch (Exception e) {
       }
-      this.notes.setModel(noteList);
+
 
       DefaultListModel<String> recordList = new DefaultListModel<>();
 
