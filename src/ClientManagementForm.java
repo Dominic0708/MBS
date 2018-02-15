@@ -42,7 +42,7 @@ public class ClientManagementForm {
         ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
         ClientRecordForm.getFrame().setContentPane(form.getPanel());
         ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        ClientRecordForm.getFrame().setSize(1200, 1000);
+        ClientRecordForm.getFrame().setSize(1200, 800);
         ClientRecordForm.getFrame().setLocationRelativeTo(null);
         ClientRecordForm.getFrame().setVisible(true);
         frame.dispose();
@@ -71,7 +71,7 @@ public class ClientManagementForm {
             ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
             ClientRecordForm.getFrame().setContentPane(form.getPanel());
             ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            ClientRecordForm.getFrame().setSize(1200, 1000);
+            ClientRecordForm.getFrame().setSize(1200, 800);
             ClientRecordForm.getFrame().setLocationRelativeTo(null);
             ClientRecordForm.getFrame().setVisible(true);
             frame.dispose();
@@ -100,7 +100,7 @@ public class ClientManagementForm {
           ClientRecordForm.setFrame(new JFrame("MBS Client Record"));
           ClientRecordForm.getFrame().setContentPane(form.getPanel());
           ClientRecordForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-          ClientRecordForm.getFrame().setSize(1200, 1000);
+          ClientRecordForm.getFrame().setSize(1200, 800);
           ClientRecordForm.getFrame().setLocationRelativeTo(null);
           ClientRecordForm.getFrame().setVisible(true);
           clickCounter = 0;
