@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Arrays;
 
 /**
  * A custom FileHandler Class is used for reading files line by line.
@@ -92,6 +93,14 @@ abstract class CustomFileHandler {
 
     Configuration config = ((Configuration) ois.readObject());
     return config;
+  }
+
+  static void setOnlineStatus() throws IOException {
+    writeFile("Status", new ArrayList<String>(Arrays.asList("1")));
+  }
+
+  static void setOfflineStatus() throws IOException {
+    writeFile("Status", new ArrayList<String>(Arrays.asList("0")));
   }
 }
 

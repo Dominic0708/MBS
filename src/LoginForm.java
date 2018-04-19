@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import java.awt.Toolkit;
+import java.util.List;
 
 /**
  * Created by Dominic on 2018-01-10.
@@ -39,6 +40,7 @@ public class LoginForm {
         try {
           CustomFileHandler.saveConfiguration("Config", config);
           CustomFileHandler.saveConfiguration("Config_Back_Up", config);
+          CustomFileHandler.setOfflineStatus();
         } catch (Exception exp) {
           JOptionPane.showMessageDialog(null, "Failed to save configuration");
         }
@@ -53,7 +55,7 @@ public class LoginForm {
           SystemForm form = new SystemForm();
           SystemForm.setFrame(new JFrame("MBS System"));
           SystemForm.getFrame().setContentPane(form.getPanel());
-          SystemForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+          SystemForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
           SystemForm.getFrame().setSize(400, 200);
           SystemForm.getFrame().setLocationRelativeTo(null);
           SystemForm.getFrame().setVisible(true);
@@ -69,7 +71,7 @@ public class LoginForm {
         AccountManagementForm form = new AccountManagementForm();
         AccountManagementForm.setFrame(new JFrame("MBS Account Management"));
         AccountManagementForm.getFrame().setContentPane(form.getPanel());
-        AccountManagementForm.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        AccountManagementForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         AccountManagementForm.getFrame().setSize(300, 200);
         AccountManagementForm.getFrame().setLocationRelativeTo(null);
         AccountManagementForm.getFrame().setVisible(true);
@@ -82,7 +84,7 @@ public class LoginForm {
     height = Toolkit.getDefaultToolkit().getScreenSize().height;
     frame = new JFrame("MBS Login");
     frame.setContentPane(new LoginForm().getPanel());
-    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     frame.setSize(300, 200);
     frame.setLocationRelativeTo(null);
     frame.setVisible(true);
@@ -103,6 +105,13 @@ public class LoginForm {
 
   static void loadConfiguration() {
     try {
+      List<String> status = CustomFileHandler.readFile("Status");
+      if (status.contains("1")) {
+        JOptionPane.showMessageDialog(null, "System already running!");
+        java.lang.System.exit(0);
+      } else {
+        CustomFileHandler.setOnlineStatus();
+      }
       CustomFileHandler.readConfiguration("Config").loadConfiguration();
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, e);
