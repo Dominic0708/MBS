@@ -80,6 +80,18 @@ public class LoginForm {
   }
 
   public static void main(String[] args) {
+    try {
+      List<String> status = CustomFileHandler.readFile("Status");
+      if (status.contains("1")) {
+        JOptionPane.showMessageDialog(null, "System already running!");
+        java.lang.System.exit(0);
+      } else {
+        CustomFileHandler.setOnlineStatus();
+      }
+    } catch (Exception e) {
+      JOptionPane.showMessageDialog(null, e);
+      java.lang.System.exit(0);
+    }
     width = Toolkit.getDefaultToolkit().getScreenSize().width;
     height = Toolkit.getDefaultToolkit().getScreenSize().height;
     frame = new JFrame("MBS Login");
@@ -105,16 +117,10 @@ public class LoginForm {
 
   static void loadConfiguration() {
     try {
-      List<String> status = CustomFileHandler.readFile("Status");
-      if (status.contains("1")) {
-        JOptionPane.showMessageDialog(null, "System already running!");
-        java.lang.System.exit(0);
-      } else {
-        CustomFileHandler.setOnlineStatus();
-      }
       CustomFileHandler.readConfiguration("Config").loadConfiguration();
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, e);
+      java.lang.System.exit(0);
     }
   }
 }
