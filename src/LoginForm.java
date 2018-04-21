@@ -120,7 +120,6 @@ public class LoginForm {
       CustomFileHandler.readConfiguration("Config").loadConfiguration();
     } catch (Exception e) {
       JOptionPane.showMessageDialog(null, e);
-      java.lang.System.exit(0);
     }
   }
 }
