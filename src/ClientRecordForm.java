@@ -1,15 +1,12 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextArea;
@@ -54,6 +51,11 @@ public class ClientRecordForm {
   private JList records;
   private JTextArea notesArea;
   private JLabel editorLabel;
+  private JProgressBar financialProgressBar;
+  private JLabel financialAccountLabel;
+  private JLabel paidAmountLabel;
+  private JLabel paidLabel;
+  private JButton detailsButton;
   private static JFrame frame;
   private Client client;
   public int mode;
@@ -100,7 +102,6 @@ public class ClientRecordForm {
                 JOptionPane.showMessageDialog(null, "Client already exists!");
                 refresh();
               }
-
 //            ClientManagementForm form = new ClientManagementForm();
 //            ClientManagementForm.getFrame().setContentPane(form.getPanel());
 //            ClientManagementForm.getFrame().setVisible(true);
@@ -162,12 +163,19 @@ public class ClientRecordForm {
         }
       }
     });
-    notesArea.addKeyListener(new KeyAdapter() {
+    detailsButton.addActionListener(new ActionListener() {
       @Override
-      public void keyReleased(KeyEvent e) {
-        super.keyReleased(e);
-        client.popNote();
-        client.addNote(notesArea.getText());
+      public void actionPerformed(ActionEvent e) {
+        FinancialAccountForm form = new FinancialAccountForm();
+        form.setClient(client);
+        form.refresh();
+        FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
+        FinancialAccountForm.getFrame().setContentPane(form.getPanel());
+        FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        FinancialAccountForm.getFrame().setSize(1200, 800);
+        FinancialAccountForm.getFrame().setLocationRelativeTo(null);
+        FinancialAccountForm.getFrame().setVisible(true);
+        frame.dispose();
       }
     });
   }
@@ -199,6 +207,7 @@ public class ClientRecordForm {
       this.heightField.setText(String.valueOf(client.getHeight()));
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
+      this.financialProgressBar.setValue(client.getFinancialAccount().getPercentage());
 
       try {notesArea.setText(client.getNotes().get(0));}
       catch (Exception e) {

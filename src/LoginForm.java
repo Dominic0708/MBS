@@ -30,6 +30,7 @@ public class LoginForm {
   private static JFrame frame;
   static int width;
   static int height;
+  static boolean debugMode = true;
 
   public LoginForm() {
     exitButton.addActionListener(new ActionListener() {
@@ -80,27 +81,38 @@ public class LoginForm {
   }
 
   public static void main(String[] args) {
-    try {
-      List<String> status = CustomFileHandler.readFile("Status");
-      if (status.contains("1")) {
-        JOptionPane.showMessageDialog(null, "System already running!");
+    if (!debugMode) {
+      try {
+        List<String> status = CustomFileHandler.readFile("Status");
+        if (status.contains("1")) {
+          JOptionPane.showMessageDialog(null, "System already running!");
+          java.lang.System.exit(0);
+        } else {
+          CustomFileHandler.setOnlineStatus();
+        }
+      } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
         java.lang.System.exit(0);
-      } else {
-        CustomFileHandler.setOnlineStatus();
       }
-    } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e);
-      java.lang.System.exit(0);
+      width = Toolkit.getDefaultToolkit().getScreenSize().width;
+      height = Toolkit.getDefaultToolkit().getScreenSize().height;
+      frame = new JFrame("MBS Login");
+      frame.setContentPane(new LoginForm().getPanel());
+      frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+      frame.setSize(300, 200);
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
+      loadConfiguration();
+    } else {
+      width = Toolkit.getDefaultToolkit().getScreenSize().width;
+      height = Toolkit.getDefaultToolkit().getScreenSize().height;
+      frame = new JFrame("MBS Login");
+      frame.setContentPane(new LoginForm().getPanel());
+      frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+      frame.setSize(300, 200);
+      frame.setLocationRelativeTo(null);
+      frame.setVisible(true);
     }
-    width = Toolkit.getDefaultToolkit().getScreenSize().width;
-    height = Toolkit.getDefaultToolkit().getScreenSize().height;
-    frame = new JFrame("MBS Login");
-    frame.setContentPane(new LoginForm().getPanel());
-    frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-    frame.setSize(300, 200);
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-    loadConfiguration();
   }
 
   public JPanel getPanel() {

@@ -17,6 +17,7 @@ public class Client implements Serializable {
   private int sessionCount;
   private ArrayList<String> notes = new ArrayList<>();
   private ArrayList<String> records = new ArrayList<>();
+  private FinancialAccount financialAccount = new FinancialAccount();
 
   public Client(String name, CustomDate dob, String address, String email, String phone, int age,
       int height, int weight, int sc) {
@@ -65,6 +66,10 @@ public class Client implements Serializable {
 
   public String getName() {
     return this.name;
+  }
+
+  public FinancialAccount getFinancialAccount() {
+    return financialAccount;
   }
 
   public void setName(String name) {
@@ -119,17 +124,17 @@ public class Client implements Serializable {
     this.records.add(record);
   }
 
-  public void popNote() {
-    if (!notes.isEmpty()) {
-      this.notes.remove(notes.size() - 1);
-    }
-  }
+//  public void popNote() {
+//    if (!notes.isEmpty()) {
+//      this.notes.remove(notes.size() - 1);
+//    }
+//  }
 
-  public void popRecord() {
-    if (!records.isEmpty()) {
-      this.records.remove(records.size() - 1);
-    }
-  }
+//  public void popRecord() {
+//    if (!records.isEmpty()) {
+//      this.records.remove(records.size() - 1);
+//    }
+//  }
 
   public void setInfo(String name, CustomDate dob, String address, String email, String phone,
       int age,
