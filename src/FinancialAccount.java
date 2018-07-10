@@ -13,6 +13,7 @@ public class FinancialAccount {
   private float percentage = paid / totalPurchase;
   private String paymentType = "Unknown";
   private CustomDate paymentDate = new CustomDate("0/0/0");
+  private int paymentsLeft = 0;
   private ArrayList<String> notes = new ArrayList<>();
   private ArrayList<String> records = new ArrayList<>();
 
@@ -50,6 +51,10 @@ public class FinancialAccount {
 
   public ArrayList<String> getNotes() {
     return notes;
+  }
+
+  public int getPaymentsLeft() {
+    return this.paymentsLeft;
   }
 
   public void addNote(String note) {
@@ -102,5 +107,9 @@ public class FinancialAccount {
     if (!notes.isEmpty()) {
       this.notes.remove(notes.size() - 1);
     }
+  }
+
+  public void setPaymentsLeft(int pl) {
+    this.paymentsLeft = pl;
   }
 }

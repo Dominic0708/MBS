@@ -48,6 +48,10 @@ public class FinancialAccountForm {
   private JLabel amountLabel;
   private JTextField amountField;
   private JButton receiveButton;
+  private JLabel paymentsLeftLabel;
+  private JTextField paymentsLeftField;
+  private JTextField termAmountField;
+  private JLabel termAmountLabel;
   private static JFrame frame;
   private FinancialAccount financialAccount;
   private Client client;
@@ -81,10 +85,19 @@ public class FinancialAccountForm {
             financialAccount
                 .setPaymentType(String.valueOf(paymentTypeBox.getSelectedItem()));
             financialAccount
+                .setTermAmount(Float.parseFloat(termAmountField.getText()));
+            financialAccount
                 .setAmountDue(Float.parseFloat(amountDueField.getText()));
             financialAccount
                 .setPaymentDate(nextPaymentDateField.getText());
             financialAccount.updatePercentage();
+            if (financialAccount.getTermAmount() == 0) {
+              financialAccount.setPaymentsLeft(0);
+            } else {
+              financialAccount
+                  .setPaymentsLeft((int)
+                      Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
+            }
           }
         }
         refresh();
@@ -112,6 +125,13 @@ public class FinancialAccountForm {
         financialAccount.setPaid(financialAccount.getPaid() + amount);
         financialAccount.setOwed(financialAccount.getOwed() - amount);
         financialAccount.setAmountDue(financialAccount.getAmountDue() - amount);
+        if (financialAccount.getTermAmount() == 0) {
+          financialAccount.setPaymentsLeft(0);
+        } else {
+          financialAccount
+              .setPaymentsLeft((int)
+                  Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
+        }
         financialAccount.updatePercentage();
         refresh();
       }
@@ -129,6 +149,8 @@ public class FinancialAccountForm {
       this.nextPaymentDateField.setText(financialAccount.getPaymentDate().toString());
       this.paymentProgressBar.setValue(financialAccount.getPercentage());
       this.amountField.setText(String.valueOf((0)));
+      this.paymentsLeftField.setText(String.valueOf(financialAccount.getPaymentsLeft()));
+      this.termAmountField.setText(String.valueOf(financialAccount.getTermAmount()));
 
       this.paymentTypeBox.removeAllItems();
       this.paymentTypeBox.addItem("Unknown");
@@ -159,7 +181,8 @@ public class FinancialAccountForm {
     try {
       float totalPurchase = Float.parseFloat(totalPurchaseField.getText());
       float amountPaid = Float.parseFloat(paidField.getText());
-      float amountOwe = Float.parseFloat(owedField.getText());
+      float amountOwed = Float.parseFloat(owedField.getText());
+      float termAmount = Float.parseFloat(termAmountField.getText());
       float amountDue = Float.parseFloat(amountDueField.getText());
     } catch (Exception e) {
       return false;

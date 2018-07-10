@@ -214,7 +214,7 @@
             </constraints>
             <properties>
               <font size="36"/>
-              <text value="100/100"/>
+              <text value=""/>
             </properties>
           </component>
         </children>
