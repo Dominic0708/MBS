@@ -53,11 +53,11 @@ public class ClientRecordForm {
   private JList records;
   private JTextArea notesArea;
   private JLabel editorLabel;
-  private JProgressBar financialProgressBar;
-  private JLabel financialAccountLabel;
+  private JProgressBar paymentProgressBar;
+  private JLabel paymentProgressLabel;
   private JLabel paidAmountLabel;
   private JLabel paidLabel;
-  private JButton detailsButton;
+  private JButton financialAccountButton;
   private static JFrame frame;
   private Client client;
   public int mode;
@@ -165,7 +165,7 @@ public class ClientRecordForm {
         }
       }
     });
-    detailsButton.addActionListener(new ActionListener() {
+    financialAccountButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         if (client != null) {
@@ -222,7 +222,10 @@ public class ClientRecordForm {
       this.heightField.setText(String.valueOf(client.getHeight()));
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
-      this.financialProgressBar.setValue(client.getFinancialAccount().getPercentage());
+      this.paymentProgressBar.setValue(client.getFinancialAccount().getPercentage());
+      this.paidAmountLabel.setText(
+          String.valueOf(client.getFinancialAccount().getPaid()) + "/" + String
+              .valueOf(client.getFinancialAccount().getTotalPurchase()));
       spinner.setValue(0);
 
       try {

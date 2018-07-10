@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="recordPanel" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="818" height="802"/>
+      <xy x="20" y="20" width="818" height="825"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -178,27 +178,19 @@
               <text value="Change by:"/>
             </properties>
           </component>
-          <component id="73cb7" class="javax.swing.JLabel" binding="financialAccountLabel">
+          <component id="73cb7" class="javax.swing.JLabel" binding="paymentProgressLabel">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Financial Account:"/>
+              <text value="Payment Progress:"/>
             </properties>
           </component>
-          <component id="1138f" class="javax.swing.JProgressBar" binding="financialProgressBar">
+          <component id="1138f" class="javax.swing.JProgressBar" binding="paymentProgressBar">
             <constraints>
-              <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
-          </component>
-          <component id="af110" class="javax.swing.JLabel" binding="paidAmountLabel">
-            <constraints>
-              <grid row="6" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="100/100"/>
-            </properties>
           </component>
           <component id="c6d" class="javax.swing.JLabel" binding="paidLabel">
             <constraints>
@@ -208,12 +200,21 @@
               <text value="Amount Paid:"/>
             </properties>
           </component>
-          <component id="a5606" class="javax.swing.JButton" binding="detailsButton" default-binding="true">
+          <component id="a5606" class="javax.swing.JButton" binding="financialAccountButton">
             <constraints>
-              <grid row="5" column="3" row-span="2" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="2" row-span="2" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Details"/>
+              <text value="Financial Account"/>
+            </properties>
+          </component>
+          <component id="af110" class="javax.swing.JLabel" binding="paidAmountLabel">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font size="36"/>
+              <text value="100/100"/>
             </properties>
           </component>
         </children>
