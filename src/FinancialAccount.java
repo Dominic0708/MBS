@@ -95,4 +95,10 @@ public class FinancialAccount {
   public void setPaymentDate(String date) {
     this.paymentDate = new CustomDate(date);
   }
+
+  public void popNote() {
+    if (!notes.isEmpty()) {
+      this.notes.remove(notes.size() - 1);
+    }
+  }
 }

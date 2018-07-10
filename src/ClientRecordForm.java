@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -178,6 +180,16 @@ public class ClientRecordForm {
         frame.dispose();
       }
     });
+    notesArea.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyReleased(KeyEvent e) {
+        super.keyReleased(e);
+        if (client != null) {
+          client.popNote();
+          client.addNote(notesArea.getText());
+        }
+      }
+    });
   }
 
   public JPanel getPanel() {
@@ -209,10 +221,10 @@ public class ClientRecordForm {
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
       this.financialProgressBar.setValue(client.getFinancialAccount().getPercentage());
 
-      try {notesArea.setText(client.getNotes().get(0));}
-      catch (Exception e) {
+      try {
+        notesArea.setText(client.getNotes().get(0));
+      } catch (Exception e) {
       }
-
 
       DefaultListModel<String> recordList = new DefaultListModel<>();
 

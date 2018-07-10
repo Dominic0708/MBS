@@ -124,17 +124,17 @@ public class Client implements Serializable {
     this.records.add(record);
   }
 
-//  public void popNote() {
-//    if (!notes.isEmpty()) {
-//      this.notes.remove(notes.size() - 1);
-//    }
-//  }
+  public void popNote() {
+    if (!notes.isEmpty()) {
+      this.notes.remove(notes.size() - 1);
+    }
+  }
 
-//  public void popRecord() {
-//    if (!records.isEmpty()) {
-//      this.records.remove(records.size() - 1);
-//    }
-//  }
+  public void popRecord() {
+    if (!records.isEmpty()) {
+      this.records.remove(records.size() - 1);
+    }
+  }
 
   public void setInfo(String name, CustomDate dob, String address, String email, String phone,
       int age,

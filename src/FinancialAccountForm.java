@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -83,6 +85,16 @@ public class FinancialAccountForm {
         }
       }
     });
+    notesArea.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyReleased(KeyEvent e) {
+        super.keyReleased(e);
+        if (client != null) {
+          client.getFinancialAccount().popNote();
+          client.getFinancialAccount().addNote(notesArea.getText());
+        }
+      }
+    });
   }
 
   public void refresh() {
@@ -105,8 +117,9 @@ public class FinancialAccountForm {
       this.paymentTypeBox.addItem("Monthly");
       this.paymentTypeBox.setSelectedItem(client.getFinancialAccount().getPaymentType());
 
-      try {notesArea.setText(client.getNotes().get(0));}
-      catch (Exception e) {
+      try {
+        notesArea.setText(client.getFinancialAccount().getNotes().get(0));
+      } catch (Exception e) {
       }
 
       DefaultListModel<String> recordList = new DefaultListModel<>();
