@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -11,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.util.ArrayList;
@@ -52,6 +54,8 @@ public class FinancialAccountForm {
   private JTextField paymentsLeftField;
   private JTextField termAmountField;
   private JLabel termAmountLabel;
+  private JScrollPane noteScroll;
+  private JScrollPane recordsScroll;
   private static JFrame frame;
   private FinancialAccount financialAccount;
   private Client client;
@@ -98,6 +102,23 @@ public class FinancialAccountForm {
                   .setPaymentsLeft((int)
                       Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
             }
+            client.getFinancialAccount().addRecord(
+                new Date() + "   -   Account modified: " + "|" + "Total Purchase: "
+                    + financialAccount
+                    .getTotalPurchase() + "|" + "Amount Paid: " + financialAccount.getPaid()
+                    + "|" + "Payment Type: " + financialAccount.getPaymentType() + "|"
+                    + "Term Amount: " + financialAccount.getTermAmount() + "|" + "Amount Due: "
+                    + financialAccount.getAmountDue() + "|" + "Next Payment Date: "
+                    + financialAccount.getPaymentDate() + "|"
+                    + "   -   by "
+                    + System.currentAccount.getUsername());
+            JOptionPane.showMessageDialog(null,
+                "Client Account Modified: " + "\n" + "Total Purchase: " + financialAccount
+                    .getTotalPurchase() + "\n" + "Amount Paid: " + financialAccount.getPaid()
+                    + "\n" + "Payment Type: " + financialAccount.getPaymentType() + "\n"
+                    + "Term Amount: " + financialAccount.getTermAmount() + "\n" + "Amount Due: "
+                    + financialAccount.getAmountDue() + "\n" + "Next Payment Date: "
+                    + financialAccount.getPaymentDate());
           }
         }
         refresh();
@@ -133,6 +154,11 @@ public class FinancialAccountForm {
                   Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
         }
         financialAccount.updatePercentage();
+        client.getFinancialAccount().addRecord(
+            new Date() + "   -   Amount received: " + amount
+                + "   -   by "
+                + System.currentAccount.getUsername());
+        JOptionPane.showMessageDialog(null, amount + " has been received!");
         refresh();
       }
     });
@@ -153,7 +179,7 @@ public class FinancialAccountForm {
       this.termAmountField.setText(String.valueOf(financialAccount.getTermAmount()));
 
       this.paymentTypeBox.removeAllItems();
-      this.paymentTypeBox.addItem("Unknown");
+      this.paymentTypeBox.addItem("Outright");
       this.paymentTypeBox.addItem("Weekly");
       this.paymentTypeBox.addItem("Bi-Weekly");
       this.paymentTypeBox.addItem("Semi-Monthly");
