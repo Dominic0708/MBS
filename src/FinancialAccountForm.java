@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JProgressBar;
@@ -48,6 +49,7 @@ public class FinancialAccountForm {
   private JTextField amountField;
   private JButton receiveButton;
   private static JFrame frame;
+  private FinancialAccount financialAccount;
   private Client client;
 
   public FinancialAccountForm() {
@@ -57,6 +59,7 @@ public class FinancialAccountForm {
       public void actionPerformed(ActionEvent e) {
         ClientRecordForm form = new ClientRecordForm();
         form.setClient(client);
+        form.mode = 1;
         form.refresh();
         ClientRecordForm.getFrame().setContentPane(form.getPanel());
         ClientRecordForm.getFrame().setVisible(true);
@@ -69,20 +72,22 @@ public class FinancialAccountForm {
       public void actionPerformed(ActionEvent e) {
         if (client != null) {
           if (validInfo()) {
-            client.getFinancialAccount()
+            financialAccount
                 .setTotalPurchase(Float.parseFloat(totalPurchaseField.getText()));
-            client.getFinancialAccount()
+            financialAccount
                 .setPaid(Float.parseFloat(paidField.getText()));
-            client.getFinancialAccount()
-                .setOwed(Float.parseFloat(owedField.getText()));
-            client.getFinancialAccount()
+            financialAccount
+                .setOwed(financialAccount.getTotalPurchase() - financialAccount.getPaid());
+            financialAccount
                 .setPaymentType(String.valueOf(paymentTypeBox.getSelectedItem()));
-            client.getFinancialAccount()
+            financialAccount
                 .setAmountDue(Float.parseFloat(amountDueField.getText()));
-            client.getFinancialAccount()
+            financialAccount
                 .setPaymentDate(nextPaymentDateField.getText());
+            financialAccount.updatePercentage();
           }
         }
+        refresh();
       }
     });
     notesArea.addKeyListener(new KeyAdapter() {
@@ -90,9 +95,25 @@ public class FinancialAccountForm {
       public void keyReleased(KeyEvent e) {
         super.keyReleased(e);
         if (client != null) {
-          client.getFinancialAccount().popNote();
-          client.getFinancialAccount().addNote(notesArea.getText());
+          financialAccount.popNote();
+          financialAccount.addNote(notesArea.getText());
         }
+      }
+    });
+    receiveButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        try {
+          float amount = Float.parseFloat(amountField.getText());
+        } catch (Exception exception) {
+          JOptionPane.showMessageDialog(null, "Please enter a valid amount!");
+        }
+        float amount = Float.parseFloat(amountField.getText());
+        financialAccount.setPaid(financialAccount.getPaid() + amount);
+        financialAccount.setOwed(financialAccount.getOwed() - amount);
+        financialAccount.setAmountDue(financialAccount.getAmountDue() - amount);
+        financialAccount.updatePercentage();
+        refresh();
       }
     });
   }
@@ -101,12 +122,12 @@ public class FinancialAccountForm {
     if (client != null) {
       this.nameField.setText(client.getName());
       this.totalPurchaseField
-          .setText(String.valueOf(client.getFinancialAccount().getTotalPurchase()));
-      this.paidField.setText(String.valueOf(client.getFinancialAccount().getPaid()));
-      this.owedField.setText(String.valueOf(client.getFinancialAccount().getOwed()));
-      this.amountDueField.setText(String.valueOf((client.getFinancialAccount().getAmountDue())));
-      this.nextPaymentDateField.setText(client.getFinancialAccount().getPaymentDate().toString());
-      this.paymentProgressBar.setValue(client.getFinancialAccount().getPercentage());
+          .setText(String.valueOf(financialAccount.getTotalPurchase()));
+      this.paidField.setText(String.valueOf(financialAccount.getPaid()));
+      this.owedField.setText(String.valueOf(financialAccount.getOwed()));
+      this.amountDueField.setText(String.valueOf((financialAccount.getAmountDue())));
+      this.nextPaymentDateField.setText(financialAccount.getPaymentDate().toString());
+      this.paymentProgressBar.setValue(financialAccount.getPercentage());
       this.amountField.setText(String.valueOf((0)));
 
       this.paymentTypeBox.removeAllItems();
@@ -115,16 +136,16 @@ public class FinancialAccountForm {
       this.paymentTypeBox.addItem("Bi-Weekly");
       this.paymentTypeBox.addItem("Semi-Monthly");
       this.paymentTypeBox.addItem("Monthly");
-      this.paymentTypeBox.setSelectedItem(client.getFinancialAccount().getPaymentType());
+      this.paymentTypeBox.setSelectedItem(financialAccount.getPaymentType());
 
       try {
-        notesArea.setText(client.getFinancialAccount().getNotes().get(0));
+        notesArea.setText(financialAccount.getNotes().get(0));
       } catch (Exception e) {
       }
 
       DefaultListModel<String> recordList = new DefaultListModel<>();
 
-      ArrayList<String> tempRecord = new ArrayList<>(client.getFinancialAccount().getRecords());
+      ArrayList<String> tempRecord = new ArrayList<>(financialAccount.getRecords());
       Collections.reverse(tempRecord);
 
       for (String record : tempRecord) {
@@ -159,8 +180,11 @@ public class FinancialAccountForm {
     FinancialAccountForm.frame = frame;
   }
 
+  public void setFinancialAccount(FinancialAccount fa) {
+    financialAccount = fa;
+  }
+
   public void setClient(Client c) {
     client = c;
   }
-
 }

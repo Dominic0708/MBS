@@ -66,10 +66,12 @@ public class FinancialAccount {
 
   public void setTotalPurchase(float totalPurchase) {
     this.totalPurchase = totalPurchase;
+    updatePercentage();
   }
 
   public void setPaid(float paid) {
     this.paid = paid;
+    updatePercentage();
   }
 
   public void setOwed(float owed) {
@@ -84,8 +86,8 @@ public class FinancialAccount {
     this.amountDue = amountDue;
   }
 
-  public void setPercentage(float percentage) {
-    this.percentage = percentage;
+  public void updatePercentage() {
+    this.percentage = Math.round((paid / totalPurchase) * 100);
   }
 
   public void setPaymentType(String paymentType) {

@@ -168,16 +168,19 @@ public class ClientRecordForm {
     detailsButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        FinancialAccountForm form = new FinancialAccountForm();
-        form.setClient(client);
-        form.refresh();
-        FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
-        FinancialAccountForm.getFrame().setContentPane(form.getPanel());
-        FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        FinancialAccountForm.getFrame().setSize(1200, 800);
-        FinancialAccountForm.getFrame().setLocationRelativeTo(null);
-        FinancialAccountForm.getFrame().setVisible(true);
-        frame.dispose();
+        if (client != null) {
+          FinancialAccountForm form = new FinancialAccountForm();
+          form.setFinancialAccount(client.getFinancialAccount());
+          form.setClient(client);
+          form.refresh();
+          FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
+          FinancialAccountForm.getFrame().setContentPane(form.getPanel());
+          FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+          FinancialAccountForm.getFrame().setSize(1200, 800);
+          FinancialAccountForm.getFrame().setLocationRelativeTo(null);
+          FinancialAccountForm.getFrame().setVisible(true);
+          frame.dispose();
+        }
       }
     });
     notesArea.addKeyListener(new KeyAdapter() {
@@ -220,6 +223,7 @@ public class ClientRecordForm {
       this.weightField.setText(String.valueOf(client.getWeight()));
       this.sessionCountLabel.setText(String.valueOf(client.getSessionCount()));
       this.financialProgressBar.setValue(client.getFinancialAccount().getPercentage());
+      spinner.setValue(0);
 
       try {
         notesArea.setText(client.getNotes().get(0));
