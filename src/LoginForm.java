@@ -103,7 +103,12 @@ public class LoginForm {
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
       loadConfiguration();
+      System.setCurrentDate();
     } else {
+
+
+
+
       width = Toolkit.getDefaultToolkit().getScreenSize().width;
       height = Toolkit.getDefaultToolkit().getScreenSize().height;
       frame = new JFrame("MBS Login");
@@ -112,6 +117,11 @@ public class LoginForm {
       frame.setSize(300, 200);
       frame.setLocationRelativeTo(null);
       frame.setVisible(true);
+      System.setCurrentDate();
+
+
+
+
     }
   }
 

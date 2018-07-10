@@ -103,7 +103,7 @@ public class FinancialAccountForm {
                       Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
             }
             client.getFinancialAccount().addRecord(
-                new Date() + "   -   Account modified: " + "|" + "Total Purchase: "
+                new Date() + "   -   Account Updated: " + "|" + "Total Purchase: "
                     + financialAccount
                     .getTotalPurchase() + "|" + "Amount Paid: " + financialAccount.getPaid()
                     + "|" + "Payment Type: " + financialAccount.getPaymentType() + "|"
@@ -113,7 +113,7 @@ public class FinancialAccountForm {
                     + "   -   by "
                     + System.currentAccount.getUsername());
             JOptionPane.showMessageDialog(null,
-                "Client Account Modified: " + "\n" + "Total Purchase: " + financialAccount
+                "Account Updated: " + "\n" + "Total Purchase: " + financialAccount
                     .getTotalPurchase() + "\n" + "Amount Paid: " + financialAccount.getPaid()
                     + "\n" + "Payment Type: " + financialAccount.getPaymentType() + "\n"
                     + "Term Amount: " + financialAccount.getTermAmount() + "\n" + "Amount Due: "

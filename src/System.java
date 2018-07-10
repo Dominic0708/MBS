@@ -9,6 +9,7 @@ public class System {
   public static ArrayList<Client> clients = new ArrayList<>();
   public static String masterPassword = "imabeast";
   public static Account currentAccount;
+  public static CustomDate currentDate;
 
   public static boolean successfulLogin(String username, String password) {
     for (Account a : accounts) {
@@ -48,5 +49,9 @@ public class System {
 
   public static ArrayList<Account> getAccounts() {
     return System.accounts;
+  }
+
+  public static void setCurrentDate() {
+    System.currentDate = new CustomDate();
   }
 }
