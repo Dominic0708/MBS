@@ -6,6 +6,7 @@ import java.util.ArrayList;
  */
 public class Client implements Serializable {
 
+  static final long serialVersionUID = 3268272929694093554L;
   private String name;
   private CustomDate dob;
   private String address;

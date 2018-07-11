@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  */
 public class CustomDate implements Serializable {
 
+  static final long serialVersionUID = 2336513392353070221L;
   public int year;
   public int month;
   public int day;

@@ -30,7 +30,7 @@ public class LoginForm {
   private static JFrame frame;
   static int width;
   static int height;
-  static boolean debugMode = true;
+  static boolean debugMode = false;
 
   public LoginForm() {
     exitButton.addActionListener(new ActionListener() {
