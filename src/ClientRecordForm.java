@@ -179,7 +179,7 @@ public class ClientRecordForm {
           FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
           FinancialAccountForm.getFrame().setContentPane(form.getPanel());
           FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-          FinancialAccountForm.getFrame().setSize(1200, 700);
+          FinancialAccountForm.getFrame().setSize(1200, 800);
           FinancialAccountForm.getFrame().setLocationRelativeTo(null);
           FinancialAccountForm.getFrame().setVisible(true);
           frame.dispose();
