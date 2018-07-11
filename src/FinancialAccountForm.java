@@ -57,7 +57,7 @@ public class FinancialAccountForm {
   private JScrollPane noteScroll;
   private JScrollPane recordsScroll;
   private static JFrame frame;
-  private FinancialAccount financialAccount;
+  private FinancialAccount financialAccount = new FinancialAccount();
   private Client client;
 
   public FinancialAccountForm() {
@@ -120,6 +120,14 @@ public class FinancialAccountForm {
                     + financialAccount.getAmountDue() + "\n" + "Next Payment Date: "
                     + financialAccount.getPaymentDate());
           }
+          client.setFinancialAccount(financialAccount);
+        }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
         }
         refresh();
       }
@@ -154,11 +162,21 @@ public class FinancialAccountForm {
                   Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
         }
         financialAccount.updatePercentage();
-        client.getFinancialAccount().addRecord(
-            new Date() + "   -   Amount received: " + amount
-                + "   -   by "
-                + System.currentAccount.getUsername());
-        JOptionPane.showMessageDialog(null, amount + " has been received!");
+        if (client != null) {
+          client.getFinancialAccount().addRecord(
+              new Date() + "   -   Amount received: " + amount
+                  + "   -   by "
+                  + System.currentAccount.getUsername());
+          JOptionPane.showMessageDialog(null, amount + " has been received!");
+          client.setFinancialAccount(financialAccount);
+        }
+        Configuration config = new Configuration();
+        config.saveConfiguration();
+        try {
+          CustomFileHandler.saveConfiguration("Config", config);
+        } catch (Exception exp) {
+          JOptionPane.showMessageDialog(null, "Failed to save configuration");
+        }
         refresh();
       }
     });
@@ -166,6 +184,10 @@ public class FinancialAccountForm {
 
   public void refresh() {
     if (client != null) {
+      if (client.getFinancialAccount() == null) {
+        client.setFinancialAccount(new FinancialAccount());
+      }
+      financialAccount = client.getFinancialAccount();
       checkNextPayment();
       this.nameField.setText(client.getName());
       this.totalPurchaseField

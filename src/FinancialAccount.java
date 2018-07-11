@@ -1,16 +1,18 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by Dominic on 2018-07-09.
  */
-public class FinancialAccount {
+public class FinancialAccount implements Serializable {
 
+  static final long serialVersionUID = 1000000000000000000L;
   private float totalPurchase = 0;
   private float paid = 0;
   private float owed = totalPurchase - paid;
   private float termAmount = 0;
   private float amountDue = 0;
-  private float percentage = paid / totalPurchase;
+  private float percentage = 0;
   private String paymentType = "Unknown";
   private CustomDate paymentDate = new CustomDate("1/1/1");
   private int paymentsLeft = 0;

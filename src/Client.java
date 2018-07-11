@@ -73,6 +73,10 @@ public class Client implements Serializable {
     return financialAccount;
   }
 
+  public void setFinancialAccount(FinancialAccount fa) {
+    this.financialAccount = fa;
+  }
+
   public void setName(String name) {
     this.name = name;
   }

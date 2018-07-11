@@ -169,6 +169,9 @@ public class ClientRecordForm {
       @Override
       public void actionPerformed(ActionEvent e) {
         if (client != null) {
+          if (client.getFinancialAccount() == null) {
+            client.setFinancialAccount(new FinancialAccount());
+          }
           FinancialAccountForm form = new FinancialAccountForm();
           form.setFinancialAccount(client.getFinancialAccount());
           form.setClient(client);
@@ -213,6 +216,9 @@ public class ClientRecordForm {
 
   public void refresh() {
     if (client != null) {
+      if (client.getFinancialAccount() == null) {
+        client.setFinancialAccount(new FinancialAccount());
+      }
       this.nameField.setText(client.getName());
       this.dobField.setText(client.getDob().toString());
       this.addressField.setText(client.getAddress());
