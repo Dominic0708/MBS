@@ -166,6 +166,7 @@ public class FinancialAccountForm {
 
   public void refresh() {
     if (client != null) {
+      checkNextPayment();
       this.nameField.setText(client.getName());
       this.totalPurchaseField
           .setText(String.valueOf(financialAccount.getTotalPurchase()));
@@ -182,7 +183,6 @@ public class FinancialAccountForm {
       this.paymentTypeBox.addItem("Outright");
       this.paymentTypeBox.addItem("Weekly");
       this.paymentTypeBox.addItem("Bi-Weekly");
-      this.paymentTypeBox.addItem("Semi-Monthly");
       this.paymentTypeBox.addItem("Monthly");
       this.paymentTypeBox.setSelectedItem(financialAccount.getPaymentType());
 
@@ -235,5 +235,25 @@ public class FinancialAccountForm {
 
   public void setClient(Client c) {
     client = c;
+  }
+
+  private void checkNextPayment() {
+    if (CustomDate.dayHasPassed(financialAccount.getPaymentDate())) {
+      if (financialAccount.getPaymentType().equals("Weekly")) {
+        financialAccount.setPaymentDate(financialAccount.getPaymentDate().getNextWeek());
+        financialAccount
+            .setAmountDue(financialAccount.getAmountDue() + financialAccount.getTermAmount());
+      } else if (financialAccount.getPaymentType().equals("Bi-Weekly")) {
+        financialAccount
+            .setPaymentDate(financialAccount.getPaymentDate().getNextBiWeek());
+        financialAccount
+            .setAmountDue(financialAccount.getAmountDue() + financialAccount.getTermAmount());
+      } else if (financialAccount.getPaymentType().equals("Monthly")) {
+        financialAccount
+            .setPaymentDate(financialAccount.getPaymentDate().getNextMonth());
+        financialAccount
+            .setAmountDue(financialAccount.getAmountDue() + financialAccount.getTermAmount());
+      }
+    }
   }
 }

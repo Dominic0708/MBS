@@ -12,7 +12,7 @@ public class FinancialAccount {
   private float amountDue = 0;
   private float percentage = paid / totalPurchase;
   private String paymentType = "Unknown";
-  private CustomDate paymentDate = new CustomDate("0/0/0");
+  private CustomDate paymentDate = new CustomDate("1/1/1");
   private int paymentsLeft = 0;
   private ArrayList<String> notes = new ArrayList<>();
   private ArrayList<String> records = new ArrayList<>();
@@ -101,6 +101,10 @@ public class FinancialAccount {
 
   public void setPaymentDate(String date) {
     this.paymentDate = new CustomDate(date);
+  }
+
+  public void setPaymentDate(CustomDate date) {
+    this.paymentDate = date;
   }
 
   public void popNote() {

@@ -1,5 +1,6 @@
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 /**
  * Created by Dominic on 2018-01-08.
@@ -31,24 +32,35 @@ public class CustomDate implements Serializable {
     day = now.getDayOfMonth();
   }
 
+  public CustomDate(int y, int m, int d) {
+    this.year = y;
+    this.month = m;
+    this.day = d;
+  }
+
   public static boolean dayHasPassed(CustomDate date) {
-    if (System.currentDate.year < date.year) {
-      return false;
-    } else if (System.currentDate.year > date.year) {
-      return true;
-    } else {
-      if (System.currentDate.month < date.month) {
-        return false;
-      } else if (System.currentDate.month > date.month) {
-        return true;
-      } else {
-        if (System.currentDate.day < date.day) {
-          return false;
-        } else {
-          return true;
-        }
-      }
-    }
+    LocalDate target = LocalDate.of(date.year, date.month, date.day);
+    LocalDate now = LocalDate.now();
+    now = now.plusDays(1);
+    return now.isAfter(target);
+  }
+
+  public CustomDate getNextWeek() {
+    LocalDate date = LocalDate.of(this.year, this.month, this.day);
+    date = date.plusDays(7);
+    return new CustomDate(date.getYear(), date.getMonthValue(), date.getDayOfMonth());
+  }
+
+  public CustomDate getNextBiWeek() {
+    LocalDate date = LocalDate.of(this.year, this.month, this.day);
+    date = date.plusDays(14);
+    return new CustomDate(date.getYear(), date.getMonthValue(), date.getDayOfMonth());
+  }
+
+  public CustomDate getNextMonth() {
+    LocalDate date = LocalDate.of(this.year, this.month, this.day);
+    date = date.plusMonths(1);
+    return new CustomDate(date.getYear(), date.getMonthValue(), date.getDayOfMonth());
   }
 
   @Override
