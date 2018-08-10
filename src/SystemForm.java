@@ -34,7 +34,7 @@ public class SystemForm {
         ClientManagementForm.setFrame(new JFrame("MBS Client Management"));
         ClientManagementForm.getFrame().setContentPane(form.getPanel());
         ClientManagementForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        ClientManagementForm.getFrame().setSize(600, 800);
+        ClientManagementForm.getFrame().setSize(800, 800);
         ClientManagementForm.getFrame().setLocationRelativeTo(null);
         ClientManagementForm.getFrame().setVisible(true);
         frame.dispose();

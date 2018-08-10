@@ -70,6 +70,9 @@ public class Client implements Serializable {
   }
 
   public FinancialAccount getFinancialAccount() {
+    if (this.financialAccount == null) {
+      this.setFinancialAccount(new FinancialAccount());
+    }
     return financialAccount;
   }
 

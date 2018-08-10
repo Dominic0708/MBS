@@ -160,7 +160,26 @@ public class ClientManagementForm {
     ArrayList<String> temp = new ArrayList<>();
 
     for (Client c : System.clients) {
-      temp.add(c.getName());
+      int length1 = 50;
+      int length2 = 80;
+
+      int spaceLength1 = length1 - c.getName().length();
+      StringBuilder spaces = new StringBuilder();
+      for (int i = 0; i < spaceLength1; i++) {
+        spaces.append(" ");
+      }
+
+      String line = c.getName() + spaces.toString() + "Sessions: " + c.getSessionCount();
+
+      int spaceLength2 = length2 - line.length();
+      spaces = new StringBuilder();
+      for (int i = 0; i < spaceLength2; i++) {
+        spaces.append(" ");
+      }
+
+      line += spaces.toString() + "Amount Due: " + c.getFinancialAccount().getAmountDue();
+
+      temp.add(line);
     }
 
     Collections.sort(temp);
