@@ -7,18 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config_Back_Up" afterPath="$PROJECT_DIR$/Config_Back_Up" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/Client.class" afterPath="$PROJECT_DIR$/out/production/MBS/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm$5.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm$6.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/SystemForm$2.class" afterPath="$PROJECT_DIR$/out/production/MBS/SystemForm$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Config" afterPath="$PROJECT_DIR$/Config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client.java" afterPath="$PROJECT_DIR$/src/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientManagementForm.form" afterPath="$PROJECT_DIR$/src/ClientManagementForm.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientManagementForm.java" afterPath="$PROJECT_DIR$/src/ClientManagementForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientRecordForm.form" afterPath="$PROJECT_DIR$/src/ClientRecordForm.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SystemForm.java" afterPath="$PROJECT_DIR$/src/SystemForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,49 +24,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ClientRecordForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2775">
-              <caret line="185" column="9" lean-forward="false" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientRecordForm.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ClientManagementForm.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="163" column="21" lean-forward="false" selection-start-line="163" selection-start-column="21" selection-end-line="163" selection-end-column="21" />
+            <state relative-caret-position="314">
+              <caret line="93" column="79" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="79" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SystemForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SystemForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="36" column="49" lean-forward="false" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientManagementForm.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -136,8 +93,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="22" />
+    <option name="x" value="-2" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="933" />
   </component>
@@ -504,7 +461,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="22" width="1680" height="933" extended-state="6" />
+    <frame x="-2" y="23" width="1680" height="933" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -868,7 +825,7 @@
         <state relative-caret-position="-1637">
           <caret line="123" column="9" lean-forward="false" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -878,14 +835,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2775">
-          <caret line="185" column="9" lean-forward="false" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SystemForm.java">
@@ -896,20 +848,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientRecordForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="185" column="9" lean-forward="false" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientManagementForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="163" column="21" lean-forward="false" selection-start-line="163" selection-start-column="21" selection-end-line="163" selection-end-column="21" />
+        <state relative-caret-position="314">
+          <caret line="93" column="79" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="79" />
           <folding />
         </state>
       </provider>

@@ -91,7 +91,8 @@ public class ClientManagementForm {
       @Override
       public void mouseClicked(MouseEvent e) {
         super.mouseClicked(e);
-        String selected = clientList.getSelectedValue();
+        String selected = clientList.getSelectedValue().substring(0,50).trim();
+        java.lang.System.out.println(selected);
         if (System.clientExists(selected) != null && clickCounter == 1) {
           ClientRecordForm form = new ClientRecordForm();
           form.mode = 1;
