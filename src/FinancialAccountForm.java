@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Arrays;
 
 /**
  * Created by Dominic on 2018-07-10.
@@ -65,13 +66,29 @@ public class FinancialAccountForm {
     backButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        ClientRecordForm form = new ClientRecordForm();
-        form.setClient(client);
-        form.mode = 1;
-        form.refresh();
-        ClientRecordForm.getFrame().setContentPane(form.getPanel());
-        ClientRecordForm.getFrame().setVisible(true);
-        frame.dispose();
+        if (fieldsChanged()) {
+          int choice = JOptionPane
+              .showConfirmDialog(null,
+                  "Discard all changes?\nNote: You should click confirm after making changes to the fields.",
+                  "MBS", JOptionPane.YES_NO_OPTION);
+          if (choice == JOptionPane.YES_OPTION) {
+            ClientRecordForm form = new ClientRecordForm();
+            form.setClient(client);
+            form.mode = 1;
+            form.refresh();
+            ClientRecordForm.getFrame().setContentPane(form.getPanel());
+            ClientRecordForm.getFrame().setVisible(true);
+            frame.dispose();
+          }
+        } else {
+          ClientRecordForm form = new ClientRecordForm();
+          form.setClient(client);
+          form.mode = 1;
+          form.refresh();
+          ClientRecordForm.getFrame().setContentPane(form.getPanel());
+          ClientRecordForm.getFrame().setVisible(true);
+          frame.dispose();
+        }
       }
     });
 
@@ -80,45 +97,47 @@ public class FinancialAccountForm {
       public void actionPerformed(ActionEvent e) {
         if (client != null) {
           if (validInfo()) {
-            financialAccount
-                .setTotalPurchase(Float.parseFloat(totalPurchaseField.getText()));
-            financialAccount
-                .setPaid(Float.parseFloat(paidField.getText()));
-            financialAccount
-                .setOwed(financialAccount.getTotalPurchase() - financialAccount.getPaid());
-            financialAccount
-                .setPaymentType(String.valueOf(paymentTypeBox.getSelectedItem()));
-            financialAccount
-                .setTermAmount(Float.parseFloat(termAmountField.getText()));
-            financialAccount
-                .setAmountDue(Float.parseFloat(amountDueField.getText()));
-            financialAccount
-                .setPaymentDate(nextPaymentDateField.getText());
-            financialAccount.updatePercentage();
-            if (financialAccount.getTermAmount() == 0) {
-              financialAccount.setPaymentsLeft(0);
-            } else {
+            if (fieldsChanged()) {
               financialAccount
-                  .setPaymentsLeft((int)
-                      Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
+                  .setTotalPurchase(Float.parseFloat(totalPurchaseField.getText()));
+              financialAccount
+                  .setPaid(Float.parseFloat(paidField.getText()));
+              financialAccount
+                  .setOwed(financialAccount.getTotalPurchase() - financialAccount.getPaid());
+              financialAccount
+                  .setPaymentType(String.valueOf(paymentTypeBox.getSelectedItem()));
+              financialAccount
+                  .setTermAmount(Float.parseFloat(termAmountField.getText()));
+              financialAccount
+                  .setAmountDue(Float.parseFloat(amountDueField.getText()));
+              financialAccount
+                  .setPaymentDate(nextPaymentDateField.getText());
+              financialAccount.updatePercentage();
+              if (financialAccount.getTermAmount() == 0) {
+                financialAccount.setPaymentsLeft(0);
+              } else {
+                financialAccount
+                    .setPaymentsLeft((int)
+                        Math.ceil(financialAccount.getOwed() / financialAccount.getTermAmount()));
+              }
+              client.getFinancialAccount().addRecord(
+                  new Date() + "   -   Account Updated: " + "|" + "Total Purchase: "
+                      + financialAccount
+                      .getTotalPurchase() + "|" + "Amount Paid: " + financialAccount.getPaid()
+                      + "|" + "Payment Type: " + financialAccount.getPaymentType() + "|"
+                      + "Term Amount: " + financialAccount.getTermAmount() + "|" + "Amount Due: "
+                      + financialAccount.getAmountDue() + "|" + "Next Payment Date: "
+                      + financialAccount.getPaymentDate() + "|"
+                      + "   -   by "
+                      + System.currentAccount.getUsername());
+              JOptionPane.showMessageDialog(null,
+                  "Account Updated: " + "\n" + "Total Purchase: " + financialAccount
+                      .getTotalPurchase() + "\n" + "Amount Paid: " + financialAccount.getPaid()
+                      + "\n" + "Payment Type: " + financialAccount.getPaymentType() + "\n"
+                      + "Term Amount: " + financialAccount.getTermAmount() + "\n" + "Amount Due: "
+                      + financialAccount.getAmountDue() + "\n" + "Next Payment Date: "
+                      + financialAccount.getPaymentDate());
             }
-            client.getFinancialAccount().addRecord(
-                new Date() + "   -   Account Updated: " + "|" + "Total Purchase: "
-                    + financialAccount
-                    .getTotalPurchase() + "|" + "Amount Paid: " + financialAccount.getPaid()
-                    + "|" + "Payment Type: " + financialAccount.getPaymentType() + "|"
-                    + "Term Amount: " + financialAccount.getTermAmount() + "|" + "Amount Due: "
-                    + financialAccount.getAmountDue() + "|" + "Next Payment Date: "
-                    + financialAccount.getPaymentDate() + "|"
-                    + "   -   by "
-                    + System.currentAccount.getUsername());
-            JOptionPane.showMessageDialog(null,
-                "Account Updated: " + "\n" + "Total Purchase: " + financialAccount
-                    .getTotalPurchase() + "\n" + "Amount Paid: " + financialAccount.getPaid()
-                    + "\n" + "Payment Type: " + financialAccount.getPaymentType() + "\n"
-                    + "Term Amount: " + financialAccount.getTermAmount() + "\n" + "Amount Due: "
-                    + financialAccount.getAmountDue() + "\n" + "Next Payment Date: "
-                    + financialAccount.getPaymentDate());
           }
           client.setFinancialAccount(financialAccount);
         }
@@ -277,5 +296,21 @@ public class FinancialAccountForm {
             .setAmountDue(financialAccount.getAmountDue() + financialAccount.getTermAmount());
       }
     }
+  }
+
+  private boolean fieldsChanged() {
+    String[] pre = {String.valueOf(financialAccount.getTotalPurchase()),
+        String.valueOf(financialAccount.getPaid()),
+        String.valueOf(financialAccount.getPaymentType()),
+        String.valueOf(financialAccount.getTermAmount()),
+        String.valueOf(financialAccount.getAmountDue()),
+        String.valueOf(financialAccount.getPaymentDate())
+    };
+
+    String[] now = {totalPurchaseField.getText(), paidField.getText(),
+        String.valueOf(paymentTypeBox.getSelectedItem()), termAmountField.getText(),
+        amountDueField.getText(), nextPaymentDateField.getText()};
+
+    return !Arrays.equals(pre, now);
   }
 }

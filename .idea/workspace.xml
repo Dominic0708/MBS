@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FinancialAccountForm.form" afterPath="$PROJECT_DIR$/src/FinancialAccountForm.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$1.class" afterPath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$2.class" afterPath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$3.class" afterPath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$4.class" afterPath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm.class" afterPath="$PROJECT_DIR$/out/production/MBS/FinancialAccountForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Status" afterPath="$PROJECT_DIR$/Status" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FinancialAccountForm.java" afterPath="$PROJECT_DIR$/src/FinancialAccountForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,10 +27,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FinancialAccountForm.form" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FinancialAccountForm.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FinancialAccountForm.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FinancialAccountForm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FinancialAccountForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-547">
+              <caret line="99" column="34" lean-forward="true" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountManagementForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="72" selection-end-column="95" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -51,9 +80,12 @@
       <find>setFinan</find>
       <find>clientList</find>
       <find>clickCoun</find>
+      <find>checkNext</find>
+      <find>refresh</find>
     </findStrings>
     <replaceStrings>
       <replace>financialAccount</replace>
+      <replace>fa</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -72,7 +104,6 @@
         <option value="$PROJECT_DIR$/src/CustomDate.java" />
         <option value="$PROJECT_DIR$/src/LoginForm.java" />
         <option value="$PROJECT_DIR$/src/FinancialAccount.java" />
-        <option value="$PROJECT_DIR$/src/FinancialAccountForm.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
         <option value="$PROJECT_DIR$/Status" />
         <option value="$PROJECT_DIR$/src/SystemForm.java" />
@@ -82,6 +113,7 @@
         <option value="$PROJECT_DIR$/src/System.java" />
         <option value="$PROJECT_DIR$/src/ClientRecordForm.java" />
         <option value="$PROJECT_DIR$/src/FinancialAccountForm.form" />
+        <option value="$PROJECT_DIR$/src/FinancialAccountForm.java" />
       </list>
     </option>
   </component>
@@ -454,6 +486,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="933" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -465,7 +498,7 @@
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -805,25 +838,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/FinancialAccountForm.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AccountManagementForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="75" column="55" lean-forward="true" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+        <state relative-caret-position="70">
+          <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="72" selection-end-column="95" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FinancialAccountForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3590">
-          <caret line="278" column="5" lean-forward="true" selection-start-line="278" selection-start-column="5" selection-end-line="278" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-547">
+          <caret line="99" column="34" lean-forward="true" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FinancialAccountForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
       </provider>
     </entry>
   </component>
