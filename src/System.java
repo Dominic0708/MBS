@@ -8,6 +8,8 @@ public class System {
   public static ArrayList<Account> accounts = new ArrayList<>();
   public static ArrayList<Client> clients = new ArrayList<>();
   public static String masterPassword = "imabeast";
+  public static String financialAccountPassword = "money";
+
   public static Account currentAccount;
   public static CustomDate currentDate;
 

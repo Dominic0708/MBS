@@ -169,20 +169,30 @@ public class ClientRecordForm {
       @Override
       public void actionPerformed(ActionEvent e) {
         if (client != null) {
-          if (client.getFinancialAccount() == null) {
-            client.setFinancialAccount(new FinancialAccount());
+          String financialAccountPassword = JOptionPane
+              .showInputDialog(null, "Please enter password for access:", "MBS",
+                  JOptionPane.INFORMATION_MESSAGE);
+          if (financialAccountPassword != null && financialAccountPassword
+              .equals(System.financialAccountPassword)) {
+            FinancialAccountForm form = new FinancialAccountForm();
+            form.setFinancialAccount(client.getFinancialAccount());
+            form.setClient(client);
+            form.refresh();
+            FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
+            FinancialAccountForm.getFrame().setContentPane(form.getPanel());
+            FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            FinancialAccountForm.getFrame().setSize(1200, 800);
+            FinancialAccountForm.getFrame().setLocationRelativeTo(null);
+            FinancialAccountForm.getFrame().setVisible(true);
+            frame.dispose();
+            JOptionPane.showMessageDialog(null, "Access granted." + "\n"
+                + "Note: Under normal operations you should only type in the amount and receive the money."
+                + "\n"
+                + "Do not change the fields above the progress bar unless there is an actual change.");
+          } else if (financialAccountPassword != null && !financialAccountPassword
+              .equals(System.financialAccountPassword)) {
+            JOptionPane.showMessageDialog(null, "Access denied.");
           }
-          FinancialAccountForm form = new FinancialAccountForm();
-          form.setFinancialAccount(client.getFinancialAccount());
-          form.setClient(client);
-          form.refresh();
-          FinancialAccountForm.setFrame(new JFrame("MBS Client Financial Account"));
-          FinancialAccountForm.getFrame().setContentPane(form.getPanel());
-          FinancialAccountForm.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-          FinancialAccountForm.getFrame().setSize(1200, 800);
-          FinancialAccountForm.getFrame().setLocationRelativeTo(null);
-          FinancialAccountForm.getFrame().setVisible(true);
-          frame.dispose();
         }
       }
     });
