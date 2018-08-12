@@ -54,6 +54,7 @@ public class ClientManagementForm {
         SystemForm form = new SystemForm();
         SystemForm.getFrame().setContentPane(form.getPanel());
         SystemForm.getFrame().setVisible(true);
+        form.refresh();
         frame.dispose();
       }
     });

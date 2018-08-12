@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
@@ -15,9 +16,11 @@ public class SystemForm {
   private JPanel buttonPanel;
   private JButton clientButton;
   private JButton logoffButton;
+  private JLabel totalClientsLabel;
   private static JFrame frame;
 
   public SystemForm() {
+    refresh();
     logoffButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -52,5 +55,9 @@ public class SystemForm {
 
   public static void setFrame(final JFrame frame) {
     SystemForm.frame = frame;
+  }
+
+  public void refresh() {
+    totalClientsLabel.setText("Total Clients: " + System.clients.size());
   }
 }
