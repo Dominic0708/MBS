@@ -79,11 +79,11 @@ public class ClientRecordForm {
         if (client != null) {
           if (mode == 1) {
             if (validInfo()) {
-              if (System.clientExists(nameField.getText()) == null || nameField.getText()
+              if (System.clientExists(nameField.getText().trim()) == null || nameField.getText().trim()
                   .equals(client.getName())) {
                 int sc = (Integer) spinner.getValue() + client.getSessionCount();
 
-                client.setInfo(nameField.getText(), new CustomDate(dobField.getText()),
+                client.setInfo(nameField.getText().trim(), new CustomDate(dobField.getText()),
                     addressField.getText(),
                     emailField.getText(), phoneField.getText(),
                     Integer.parseInt(ageField.getText()),
@@ -114,14 +114,14 @@ public class ClientRecordForm {
             }
           }
         } else {
-          if (System.clientExists(nameField.getText()) != null) {
+          if (System.clientExists(nameField.getText().trim()) != null) {
             JOptionPane.showMessageDialog(null, "Client already exists!");
-            client = System.clientExists(nameField.getText());
+            client = System.clientExists(nameField.getText().trim());
             refresh();
             mode = 1;
           } else {
             if (validInfo()) {
-              client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
+              client = new Client(nameField.getText().trim(), new CustomDate(dobField.getText()),
                   addressField.getText(),
                   emailField.getText(), phoneField.getText(), Integer.parseInt(ageField.getText()),
                   Integer.parseInt(heightField.getText()), Integer.parseInt(weightField.getText()),
@@ -140,7 +140,7 @@ public class ClientRecordForm {
 //            ClientManagementForm.getFrame().setVisible(true);
 //            frame.dispose();
             } else {
-              client = new Client(nameField.getText(), new CustomDate(dobField.getText()),
+              client = new Client(nameField.getText().trim(), new CustomDate(dobField.getText()),
                   addressField.getText(),
                   emailField.getText(), phoneField.getText(), 0, 0, 0,
                   (Integer) spinner.getValue());
