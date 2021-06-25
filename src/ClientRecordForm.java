@@ -58,6 +58,7 @@ public class ClientRecordForm {
   private JLabel paidAmountLabel;
   private JLabel paidLabel;
   private JButton financialAccountButton;
+  private JPanel photoPanel;
   private static JFrame frame;
   private Client client;
   public int mode;
