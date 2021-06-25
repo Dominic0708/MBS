@@ -2,21 +2,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import javax.swing.DefaultListModel;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.ImageIcon;
+import java.awt.Image;
 
 /**
  * Created by Dominic on 2018-01-13.
@@ -58,7 +49,7 @@ public class ClientRecordForm {
   private JLabel paidAmountLabel;
   private JLabel paidLabel;
   private JButton financialAccountButton;
-  private JPanel photoPanel;
+  private JLabel photoLabel;
   private static JFrame frame;
   private Client client;
   public int mode;
@@ -259,6 +250,10 @@ public class ClientRecordForm {
         recordList.addElement(record);
       }
       this.records.setModel(recordList);
+
+      Image photo = new ImageIcon("Photos/" + client.getName()).getImage().getScaledInstance(600, 600,  java.awt.Image.SCALE_SMOOTH);
+      this.photoLabel.setIcon(new ImageIcon(photo));
+
     }
   }
 

@@ -9,24 +9,11 @@
     <list default="true" id="5ed0de09-69ed-4c80-a6dc-1b4be8afb01f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MBS.jar" beforeDir="false" afterPath="$PROJECT_DIR$/MBS.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Status" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientManagementForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/ClientRecordForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MBS/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientRecordForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientRecordForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ClientRecordForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientRecordForm.java" afterDir="false" />
     </list>
